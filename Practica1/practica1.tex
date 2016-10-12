@@ -4,6 +4,7 @@
 \usepackage[spanish]{babel}
 \usepackage{enumerate}
 \usepackage{float}
+\usepackage{amsmath}
 \usepackage[hidelinks]{hyperref}
 \usepackage[vmargin=2.3cm,hmargin=2.3cm]{geometry}
 \usepackage{sectsty}
@@ -44,12 +45,53 @@ $L(G) = \lbrace u$ $\vert$ $ u \in \lbrace a,b \rbrace^* \rbrace$
 
 \end{enumerate}
 
-\section{Encontrar una gramática regular o una gramática libre de contexto que genere los
-siguientes lenguajes en el alfabeto A$=\lbrace$a,b,c$\rbrace$:}
+\section{Encontrar una gramática regular o una gramática libre de contexto que genere los siguientes lenguajes en el alfabeto A$=\lbrace$a,b,c$\rbrace$:}
 
 \begin{enumerate}[$\bullet$]
-	\item ...
-	\item ...
+	\item $u \in A^*$ si y solamente si verifica que $u$ empieza por el símbolo `a' y acaba con el símbolo `c'.
+
+$S \rightarrow aS_1$	\hspace{3cm} $S_1 \rightarrow aS_1$ $\vert$ $bS_1$ $\vert$ $cS_1$ $\vert$ $c$
+	
+	\item $u \in A^*$ si y solamente si verifica que $u$ contiene un número par de símbolo `a'.
+
+$S \rightarrow aSa$ $\vert$ $aaS$ $\vert$ $Saa$ $\vert$ $bS$ $\vert$ $cS$ $\vert$ $\varepsilon$
+	
+	\item $u \in A^*$ si y solamente si verifica que $u$ tiene un número impar de símbolos y la letra central coincide con la última.
+	
+$S \rightarrow X$ $\vert$ $XS_1a$ $\vert$ $XS_2b$ $\vert$ $XS_3c$ \hspace{0,8cm} $S_1 \rightarrow XS_1X$ $\vert$ $a$ \hspace{0,8cm} $S_2 \rightarrow XS_2X$ $\vert$ $b$ \hspace{0,8cm} $S_3 \rightarrow XS_3X$ $\vert$ $c$	 \hspace{0,8cm} $X \rightarrow a$ $\vert$ $b$ $\vert$ $c$
+	
+	\item $u \in A^*$ si y solamente si verifica que $u$ no contiene la subcadena ab.
+	
+$S \rightarrow aS_1$	$\vert$ $bS$ $\vert$ $cS$ $\vert$ $\varepsilon$ \hspace{3cm} $S_1 \rightarrow aS_1$ $\vert$ $cS$ $\vert$ $\varepsilon$	
+	
+	\item $u \in A^*$ si y solamente si verifica que $u$ contiene 2 ó 3 símbolos c.
+	
+$S \rightarrow aS$	$\vert$ $bS$ $\vert$ $cS_1$ \hspace{2cm} $S_1 \rightarrow aS_1$ $\vert$ $bS_1$ $\vert$ $cS_2$ \hspace{2cm} $S_2 \rightarrow aS_2$ $\vert$ $bS_2$ $\vert$ $cS_3$ $\vert$ $\varepsilon$ \hspace{2cm} $S_3 \rightarrow aS_3$ $\vert$ $bS_3$ $\vert$ $\varepsilon$
+	
 \end{enumerate}
+
+\section{Determinar si el lenguaje sobre el alfabeto A = \{a,b\} generado por la siguiente gramática es regular (justifica la respuesta):}
+
+$S \rightarrow S_1bS_2$ \hspace{2cm} $S_1 \rightarrow aS_1$ $\vert$ $\varepsilon$ \hspace{2cm} $S_2 \rightarrow aS_2$ $\vert$ $bS_2$ $\vert$ $\varepsilon$\\
+
+El lenguaje que genera esta gramática es el siguiente:\\
+
+$L(G) = \lbrace a^ibu$ $\vert$ $i \geq 0, u \in \lbrace a,b \rbrace^* \rbrace$\\	
+
+Como el lenguaje se puede generar mediante una gramática regular, el lenguaje es regular:\\
+
+$S \rightarrow aS$	$\vert$ $bS_1$ \hspace{2cm} $S_1 \rightarrow aS_1$ $\vert$ $bS_1$ $\vert$  $\varepsilon$
+
+\section{Identifique cuál de las siguientes afirmaciones es cierta con respecto a los lenguajes $L(G_1)$ y $L(G_2)$}
+
+\hspace*{2.5cm}$ G_1 = \begin{cases} S \rightarrow X \\ S \rightarrow Y \\ X \rightarrow xXy 
+  \\    Y \rightarrow xxYy \\ X \rightarrow \varepsilon \\ Y \rightarrow \varepsilon \end{cases}
+\qquad \qquad
+ G_2 = \begin{cases} S \rightarrow X \\ X \rightarrow Y \\ X \rightarrow xXy 
+  \\    Y \rightarrow xxYy \\ X \rightarrow \varepsilon \\ Y \rightarrow \varepsilon \end{cases}
+$
+\\
+
+Se puede observar que con el lenguaje $L(G_1)$ se genera el mismo número de $x$ que de $y$, ó el doble de $x$ que de $y$. En cambio con el lenguaje $L(G_2)$ se genera un número de $x$ igual o mayor al número de $y$. Por lo tanto la opción correcta es la a) $L(G_1)$ $\subset$ $L(G_2)$.
 
 \end{document}
