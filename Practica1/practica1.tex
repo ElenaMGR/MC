@@ -1,0 +1,55 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{enumerate}
+\usepackage{float}
+\usepackage[hidelinks]{hyperref}
+\usepackage[vmargin=2.3cm,hmargin=2.3cm]{geometry}
+\usepackage{sectsty}
+\sectionfont{\fontsize{12}{15}\selectfont}
+
+
+\title{MODELOS DE COMPUTACIÓN \\ Practica 1. Introducción a la Computación. Lenguajes y Gramáticas }
+
+
+\author{Elena María Gómez Ríos}
+
+
+\begin{document}
+\maketitle
+
+\section{Describir el lenguaje generado por las siguientes gramáticas:}
+
+\begin{enumerate}[a)]
+	\item $S \rightarrow a$ $S_1$ $b$	\hspace{3cm}	$S_1 \rightarrow a$ $S_1$ $\vert$ $b$ $S_1$ $\vert$ $\varepsilon$
+
+$L(G) = \lbrace aub$ $\vert$ $ u \in \lbrace a,b \rbrace^* \rbrace$	
+	
+	\item $S \rightarrow a$ $S$ $b$ $\vert$ $S_1$ \hspace{2,35cm} $S_1 \rightarrow \varepsilon$
+	
+$L(G) = \lbrace a^ib^i$ $\vert$ $ i \geq 0 \rbrace$	
+	
+	\item $S \rightarrow a$ $S$ $b$ $\vert$ $S_1$ \hspace{2,35cm} $S_1 \rightarrow c$ $\vert$ $\varepsilon$
+	
+$L(G) = \lbrace a^ic^jb^i$ $\vert$ $ i \geq 0, j \in \lbrace 0,1\rbrace \rbrace$		
+	
+	\item $S \rightarrow a$ $S$ $b$ $\vert$ $S_1$ \hspace{2,35cm} $S_1 \rightarrow c$ $S_1$ $d$ $\vert$ $\varepsilon$
+	
+$L(G) = \lbrace a^ic^jd^jb^i$ $\vert$ $ i,j \geq 0 \rbrace$	
+	
+	\item $S \rightarrow a$ $S$ $b$ $\vert$ $S_1$ \hspace{2,35cm} $S_1 \rightarrow a$ $S_1$ $\vert$ $b$ $S_1$ $\vert$ $\varepsilon$
+	
+$L(G) = \lbrace u$ $\vert$ $ u \in \lbrace a,b \rbrace^* \rbrace$	
+
+\end{enumerate}
+
+\section{Encontrar una gramática regular o una gramática libre de contexto que genere los
+siguientes lenguajes en el alfabeto A$=\lbrace$a,b,c$\rbrace$:}
+
+\begin{enumerate}[$\bullet$]
+	\item ...
+	\item ...
+\end{enumerate}
+
+\end{document}
