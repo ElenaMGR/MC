@@ -1,0 +1,4 @@
+\BOOKMARK [1][-]{section.1}{Considere el siguiente AFD M = \(Q, A, \040, q0 , F\), donde}{}% 1
+\BOOKMARK [1][-]{section.2}{Dibujar los AFDs que aceptan los siguientes lenguajes con alfabeto \1730,1\175}{}% 2
+\BOOKMARK [1][-]{section.3}{Dado el alfabeto \173x, z\175, queremos construir un aut\363mata finito M tal que L\(M\) sea el lenguaje formado por las cadenas que contienen al menos una z, y cada z est\341 inmediatamente precedida y seguida por una x. \277Es correcta la siguiente soluci\363n? Razonar la respuesta.}{}% 3
+\BOOKMARK [1][-]{section.4}{Dado el siguiente aut\363mata M, describir el lenguaje aceptado por dicho aut\363mata:}{}% 4

@@ -1,0 +1,731 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{enumerate}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[hidelinks]{hyperref}
+\usepackage[vmargin=2.3cm,hmargin=2.3cm]{geometry}
+\usepackage{sectsty}
+\sectionfont{\fontsize{12}{15}\selectfont}
+\usepackage{tikz}
+
+
+\title{MODELOS DE COMPUTACIÓN \\ Practica 2. Autómatas Finitos. }
+
+
+\author{Elena María Gómez Ríos}
+
+
+\begin{document}
+\maketitle
+
+\section{Considere el siguiente AFD M = (Q, A, $ \delta $, $q_0$ , F), donde}
+
+\begin{enumerate}[$\bullet$]
+\item $Q=\{ q_0 , q_1 ,q_2 \}$
+\item $A=\{0,1\}$
+\item La función de transición viene dada por:\\
+$\delta(q_0 , 0)= q_1, \delta(q_0 , 1)= q_0 $ \\
+$\delta(q_1 , 0)= q_2, \delta(q_1 , 1)= q_0 $ \\
+$\delta(q_2 , 0)= q_2, \delta(q_2 , 1)= q_2 $ 
+\item $F = \{q_2 \}$
+\end{enumerate}
+
+Dibuje su diagrama de transición y describa informalmente el lenguaje aceptado.\\
+
+Respuesta: 
+\begin{center}
+\begin{tikzpicture}[scale=0.2]
+\tikzstyle{every node}+=[inner sep=0pt]
+\draw [black] (12.5,-22.8) circle (3);
+\draw (12.5,-22.8) node {$q_0$};
+\draw [black] (32.3,-22.8) circle (3);
+\draw (32.3,-22.8) node {$q_1$};
+\draw [black] (49.9,-22.8) circle (3);
+\draw (49.9,-22.8) node {$q_2$};
+\draw [black] (49.9,-22.8) circle (2.4);
+\draw [black] (3.8,-22.8) -- (9.5,-22.8);
+\fill [black] (9.5,-22.8) -- (8.7,-22.3) -- (8.7,-23.3);
+\draw [black] (11.177,-20.12) arc (234:-54:2.25);
+\draw (12.5,-15.55) node [above] {$1$};
+\fill [black] (13.82,-20.12) -- (14.7,-19.77) -- (13.89,-19.18);
+\draw [black] (15.204,-21.507) arc (111.23824:68.76176:19.866);
+\fill [black] (29.6,-21.51) -- (29.03,-20.75) -- (28.67,-21.68);
+\draw (22.4,-19.66) node [above] {$0$};
+\draw [black] (29.782,-24.423) arc (-62.55971:-117.44029:16.019);
+\fill [black] (15.02,-24.42) -- (15.5,-25.24) -- (15.96,-24.35);
+\draw (22.4,-26.73) node [below] {$1$};
+\draw [black] (35.3,-22.8) -- (46.9,-22.8);
+\fill [black] (46.9,-22.8) -- (46.1,-22.3) -- (46.1,-23.3);
+\draw (41.1,-23.3) node [below] {$0$};
+\draw [black] (48.577,-20.12) arc (234:-54:2.25);
+\draw (49.9,-15.55) node [above] {$0,1$};
+\fill [black] (51.22,-20.12) -- (52.1,-19.77) -- (51.29,-19.18);
+\end{tikzpicture}
+\end{center}
+
+El lenguaje aceptado es cualquier cadena que contiene la subcadena 00.\\
+$L =\{ u00v \mid u,v \in \{0,1\}^*\}$
+
+
+\section{Dibujar los AFDs que aceptan los siguientes lenguajes con alfabeto \{0,1\}}
+\begin{enumerate}[a)]
+\item El lenguaje vacío,$\phi$.
+\begin{center}
+\begin{tikzpicture}[scale=0.2]
+\tikzstyle{every node}+=[inner sep=0pt]
+\draw [black] (17.6,-17) circle (3);
+\draw (17.6,-17) node {$q_0$};
+\draw [black] (10.1,-17) -- (14.6,-17);
+\fill [black] (14.6,-17) -- (13.8,-16.5) -- (13.8,-17.5);
+\draw [black] (19.879,-15.067) arc (158.03624:-129.96376:2.25);
+\draw (24.91,-14.91) node [right] {$0,1$};
+\fill [black] (20.52,-17.63) -- (21.08,-18.4) -- (21.45,-17.47);
+\end{tikzpicture}
+\end{center}
+
+\item El lenguaje formado por la palabra vacía, o sea,$ \lbrace \varepsilon \rbrace $. 
+
+\begin{center}
+\begin{tikzpicture}[scale=0.2]
+\tikzstyle{every node}+=[inner sep=0pt]
+\draw [black] (17.6,-17) circle (3);
+\draw (17.6,-17) node {$q_0$};
+\draw [black] (17.6,-17) circle (2.4);
+\draw [black] (30.3,-17) circle (3);
+\draw (30.3,-17) node {$q_1$};
+\draw [black] (10.1,-17) -- (14.6,-17);
+\fill [black] (14.6,-17) -- (13.8,-16.5) -- (13.8,-17.5);
+\draw [black] (20.6,-17) -- (27.3,-17);
+\fill [black] (27.3,-17) -- (26.5,-16.5) -- (26.5,-17.5);
+\draw (23.95,-17.5) node [below] {$0,1$};
+\draw [black] (32.424,-14.898) arc (162.43495:-125.56505:2.25);
+\draw (37.47,-14.16) node [right] {$0,1$};
+\fill [black] (33.26,-17.41) -- (33.87,-18.13) -- (34.17,-17.17);
+\end{tikzpicture}
+\end{center}
+
+
+\item El lenguaje $\lbrace 11,00 \rbrace$
+
+\begin{center}
+\begin{tikzpicture}[scale=0.2]
+\tikzstyle{every node}+=[inner sep=0pt]
+\draw [black] (17.6,-17) circle (3);
+\draw (17.6,-17) node {$q_0$};
+\draw [black] (27.6,-9.5) circle (3);
+\draw (27.6,-9.5) node {$q_1$};
+\draw [black] (27.6,-24.2) circle (3);
+\draw (27.6,-24.2) node {$q_3$};
+\draw [black] (39.8,-9.5) circle (3);
+\draw (39.8,-9.5) node {$q_2$};
+\draw [black] (39.8,-9.5) circle (2.4);
+\draw [black] (39.8,-24.2) circle (3);
+\draw (39.8,-24.2) node {$q_4$};
+\draw [black] (39.8,-24.2) circle (2.4);
+\draw [black] (46.8,-15.7) circle (3);
+\draw (46.8,-15.7) node {$q_5$};
+\draw [black] (10.1,-17) -- (14.6,-17);
+\fill [black] (14.6,-17) -- (13.8,-16.5) -- (13.8,-17.5);
+\draw [black] (20,-15.2) -- (25.2,-11.3);
+\fill [black] (25.2,-11.3) -- (24.26,-11.38) -- (24.86,-12.18);
+\draw (23.6,-13.75) node [below] {$0$};
+\draw [black] (20.03,-18.75) -- (25.17,-22.45);
+\fill [black] (25.17,-22.45) -- (24.81,-21.57) -- (24.22,-22.39);
+\draw (21.6,-21.1) node [below] {$1$};
+\draw [black] (30.6,-9.5) -- (36.8,-9.5);
+\fill [black] (36.8,-9.5) -- (36,-9) -- (36,-10);
+\draw (33.7,-10) node [below] {$0$};
+\draw [black] (30.6,-24.2) -- (36.8,-24.2);
+\fill [black] (36.8,-24.2) -- (36,-23.7) -- (36,-24.7);
+\draw (33.7,-24.7) node [below] {$1$};
+\draw [black] (41.71,-21.88) -- (44.89,-18.02);
+\fill [black] (44.89,-18.02) -- (44,-18.32) -- (44.77,-18.95);
+\draw (43.86,-21.38) node [right] {$0,1$};
+\draw [black] (42.05,-11.49) -- (44.55,-13.71);
+\fill [black] (44.55,-13.71) -- (44.29,-12.81) -- (43.62,-13.55);
+\draw (41.54,-13.09) node [below] {$0,1$};
+\draw [black] (49.185,-13.899) arc (154.7843:-133.2157:2.25);
+\draw (54.16,-14.15) node [right] {$0,1$};
+\fill [black] (49.68,-16.5) -- (50.19,-17.29) -- (50.62,-16.39);
+\draw [black] (48.107,-18.389) arc (17.86276:-150.10401:10.664);
+\fill [black] (48.11,-18.39) -- (47.88,-19.3) -- (48.83,-19);
+\draw (43.25,-31.92) node [below] {$0$};
+\draw [black] (29.01,-6.865) arc (143.32712:0.88062:10.093);
+\fill [black] (47.2,-12.74) -- (47.68,-11.93) -- (46.68,-11.95);
+\draw (41.08,-2.75) node [above] {$1$};
+\end{tikzpicture}
+\end{center}
+
+\item El lenguaje formado por sucesiones de la subcadena '01' incluyendo la
+cadena vacía, o sea,\\ $\{\varepsilon, 01, 0101, 010101,…\}$. 
+\begin{center}
+\begin{tikzpicture}[scale=0.2]
+\tikzstyle{every node}+=[inner sep=0pt]
+\draw [black] (17.6,-17) circle (3);
+\draw (17.6,-17) node {$q_0$};
+\draw [black] (17.6,-17) circle (2.4);
+\draw [black] (31.7,-17) circle (3);
+\draw (31.7,-17) node {$q_1$};
+\draw [black] (24.2,-30.1) circle (3);
+\draw (24.2,-30.1) node {$q_2$};
+\draw [black] (10.1,-17) -- (14.6,-17);
+\fill [black] (14.6,-17) -- (13.8,-16.5) -- (13.8,-17.5);
+\draw [black] (29.227,-18.68) arc (-64.03937:-115.96063:10.455);
+\fill [black] (29.23,-18.68) -- (28.29,-18.58) -- (28.73,-19.48);
+\draw (24.65,-20.23) node [below] {$0$};
+\draw [black] (18.95,-19.68) -- (22.85,-27.42);
+\fill [black] (22.85,-27.42) -- (22.94,-26.48) -- (22.04,-26.93);
+\draw (20.21,-24.66) node [left] {$1$};
+\draw [black] (19.966,-15.174) arc (118.81512:61.18488:9.719);
+\fill [black] (19.97,-15.17) -- (20.91,-15.23) -- (20.43,-14.35);
+\draw (24.65,-13.47) node [above] {$1$};
+\draw [black] (30.21,-19.6) -- (25.69,-27.5);
+\fill [black] (25.69,-27.5) -- (26.52,-27.05) -- (25.65,-26.55);
+\draw (27.29,-22.32) node [left] {$0$};
+\draw [black] (25.18,-32.923) arc (46.87498:-241.12502:2.25);
+\draw (22.88,-37.46) node [below] {$0,1$};
+\fill [black] (22.56,-32.59) -- (21.64,-32.84) -- (22.37,-33.52);
+\end{tikzpicture}
+\end{center}
+
+
+\item El conjunto de todas las cadenas tales que cada bloque de cinco símbolos
+consecutivos contengan al menos dos ceros.
+
+Por bloques:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.2]
+\tikzstyle{every node}+=[inner sep=0pt]
+\draw [black] (17.6,-17) circle (3);
+\draw (17.6,-17) node {$q_0$};
+\draw [black] (30.5,-17) circle (3);
+\draw (30.5,-17) node {$q_1$};
+\draw [black] (42.9,-17) circle (3);
+\draw (42.9,-17) node {$q_2$};
+\draw [black] (54.4,-17) circle (3);
+\draw (54.4,-17) node {$q_3$};
+\draw [black] (17.6,-28.6) circle (3);
+\draw (17.6,-28.6) node {$q_4$};
+\draw [black] (30.5,-28.6) circle (3);
+\draw (30.5,-28.6) node {$q_5$};
+\draw [black] (42.9,-28.6) circle (3);
+\draw (42.9,-28.6) node {$q_6$};
+\draw [black] (54.4,-28.6) circle (3);
+\draw (54.4,-28.6) node {$q_7$};
+\draw [black] (17.3,-40.1) circle (3);
+\draw (17.3,-40.1) node {$q_8$};
+\draw [black] (30.5,-40.1) circle (3);
+\draw (30.5,-40.1) node {$q_9$};
+\draw [black] (42.9,-40.1) circle (3);
+\draw (42.9,-40.1) node {$q_{10}$};
+\draw [black] (54.4,-40.1) circle (3);
+\draw (54.4,-40.1) node {$q_{11}$};
+\draw [black] (54.4,-40.1) circle (2.4);
+\draw [black] (67.6,-27.9) circle (3);
+\draw (67.6,-27.9) node {$E$};
+\draw [black] (10.1,-17) -- (14.6,-17);
+\fill [black] (14.6,-17) -- (13.8,-16.5) -- (13.8,-17.5);
+\draw [black] (20.6,-17) -- (27.5,-17);
+\fill [black] (27.5,-17) -- (26.7,-16.5) -- (26.7,-17.5);
+\draw (24.05,-17.5) node [below] {$1$};
+\draw [black] (33.5,-17) -- (39.9,-17);
+\fill [black] (39.9,-17) -- (39.1,-16.5) -- (39.1,-17.5);
+\draw (36.7,-17.5) node [below] {$1$};
+\draw [black] (45.9,-17) -- (51.4,-17);
+\fill [black] (51.4,-17) -- (50.6,-16.5) -- (50.6,-17.5);
+\draw (48.65,-17.5) node [below] {$1$};
+\draw [black] (20.6,-28.6) -- (27.5,-28.6);
+\fill [black] (27.5,-28.6) -- (26.7,-28.1) -- (26.7,-29.1);
+\draw (24.05,-29.1) node [below] {$1$};
+\draw [black] (33.5,-28.6) -- (39.9,-28.6);
+\fill [black] (39.9,-28.6) -- (39.1,-28.1) -- (39.1,-29.1);
+\draw (36.7,-29.1) node [below] {$1$};
+\draw [black] (45.9,-28.6) -- (51.4,-28.6);
+\fill [black] (51.4,-28.6) -- (50.6,-28.1) -- (50.6,-29.1);
+\draw (48.65,-29.1) node [below] {$1$};
+\draw [black] (20.3,-40.1) -- (27.5,-40.1);
+\fill [black] (27.5,-40.1) -- (26.7,-39.6) -- (26.7,-40.6);
+\draw (23.9,-40.6) node [below] {$0,1$};
+\draw [black] (33.5,-40.1) -- (39.9,-40.1);
+\fill [black] (39.9,-40.1) -- (39.1,-39.6) -- (39.1,-40.6);
+\draw (36.7,-40.6) node [below] {$0,1$};
+\draw [black] (45.9,-40.1) -- (51.4,-40.1);
+\fill [black] (51.4,-40.1) -- (50.6,-39.6) -- (50.6,-40.6);
+\draw (48.65,-40.6) node [below] {$0,1$};
+\draw [black] (17.6,-20) -- (17.6,-25.6);
+\fill [black] (17.6,-25.6) -- (18.1,-24.8) -- (17.1,-24.8);
+\draw (17.1,-22.8) node [left] {$0$};
+\draw [black] (17.52,-31.6) -- (17.38,-37.1);
+\fill [black] (17.38,-37.1) -- (17.9,-36.31) -- (16.9,-36.29);
+\draw (16.91,-34.34) node [left] {$0$};
+\draw [black] (30.5,-20) -- (30.5,-25.6);
+\fill [black] (30.5,-25.6) -- (31,-24.8) -- (30,-24.8);
+\draw (30,-22.8) node [left] {$0$};
+\draw [black] (30.5,-31.6) -- (30.5,-37.1);
+\fill [black] (30.5,-37.1) -- (31,-36.3) -- (30,-36.3);
+\draw (30,-34.35) node [left] {$0$};
+\draw [black] (42.9,-20) -- (42.9,-25.6);
+\fill [black] (42.9,-25.6) -- (43.4,-24.8) -- (42.4,-24.8);
+\draw (42.4,-22.8) node [left] {$0$};
+\draw [black] (42.9,-31.6) -- (42.9,-37.1);
+\fill [black] (42.9,-37.1) -- (43.4,-36.3) -- (42.4,-36.3);
+\draw (42.4,-34.35) node [left] {$0$};
+\draw [black] (54.4,-20) -- (54.4,-25.6);
+\fill [black] (54.4,-25.6) -- (54.9,-24.8) -- (53.9,-24.8);
+\draw (53.9,-22.8) node [left] {$0$};
+\draw [black] (54.4,-31.6) -- (54.4,-37.1);
+\fill [black] (54.4,-37.1) -- (54.9,-36.3) -- (53.9,-36.3);
+\draw (53.9,-34.35) node [left] {$0$};
+\draw [black] (56.71,-18.91) -- (65.29,-25.99);
+\fill [black] (65.29,-25.99) -- (64.99,-25.09) -- (64.35,-25.87);
+\draw (59.99,-22.94) node [below] {$1$};
+\draw [black] (57.4,-28.44) -- (64.6,-28.06);
+\fill [black] (64.6,-28.06) -- (63.78,-27.6) -- (63.83,-28.6);
+\draw (61.06,-28.8) node [below] {$1$};
+\draw [black] (54.378,-43.097) arc (-4.57738:-210.13067:20.662);
+\fill [black] (15.91,-31.08) -- (15.08,-31.52) -- (15.94,-32.02);
+\draw (26.76,-61.71) node [below] {$0$};
+\draw [black] (31.75,-14.277) arc (150.62638:-58.67608:18.205);
+\fill [black] (31.75,-14.28) -- (32.58,-13.82) -- (31.71,-13.33);
+\draw (61.29,-9.63) node [above] {$1$};
+\draw [black] (69.859,-25.944) arc (158.62087:-129.37913:2.25);
+\draw (74.9,-25.71) node [right] {$0,1$};
+\fill [black] (70.53,-28.5) -- (71.09,-29.26) -- (71.45,-28.33);
+\end{tikzpicture}
+\end{center}
+
+Por ventanas:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.2]
+\tikzstyle{every node}+=[inner sep=0pt]
+\draw [black] (15.1,-18.9) circle (3);
+\draw (15.1,-18.9) node {$q_0$};
+\draw [black] (15.1,-18.9) circle (2.4);
+\draw [black] (27.2,-18.9) circle (3);
+\draw (27.2,-18.9) node {$q_1$};
+\draw [black] (27.2,-18.9) circle (2.4);
+\draw [black] (37.7,-18.9) circle (3);
+\draw (37.7,-18.9) node {$q_2$};
+\draw [black] (37.7,-18.9) circle (2.4);
+\draw [black] (48.2,-18.9) circle (3);
+\draw (48.2,-18.9) node {$q_3$};
+\draw [black] (48.2,-18.9) circle (2.4);
+\draw [black] (59.5,-18.9) circle (3);
+\draw (59.5,-18.9) node {$q_4$};
+\draw [black] (27.2,-29) circle (3);
+\draw (27.2,-29) node {$q_5$};
+\draw [black] (27.2,-29) circle (2.4);
+\draw [black] (37.7,-29) circle (3);
+\draw (37.7,-29) node {$q_6$};
+\draw [black] (37.7,-29) circle (2.4);
+\draw [black] (32.4,-40) circle (3);
+\draw (32.4,-40) node {$q_7$};
+\draw [black] (32.4,-40) circle (2.4);
+\draw [black] (41.3,-6.3) circle (3);
+\draw (41.3,-6.3) node {$q_8$};
+\draw [black] (41.3,-6.3) circle (2.4);
+\draw [black] (48.2,-29) circle (3);
+\draw (48.2,-29) node {$q_9$};
+\draw [black] (48.2,-29) circle (2.4);
+\draw [black] (7.6,-18.9) -- (12.1,-18.9);
+\fill [black] (12.1,-18.9) -- (11.3,-18.4) -- (11.3,-19.4);
+\draw [black] (13.777,-16.22) arc (234:-54:2.25);
+\draw (15.1,-11.65) node [above] {$0$};
+\fill [black] (16.42,-16.22) -- (17.3,-15.87) -- (16.49,-15.28);
+\draw [black] (18.1,-18.9) -- (24.2,-18.9);
+\fill [black] (24.2,-18.9) -- (23.4,-18.4) -- (23.4,-19.4);
+\draw (21.15,-19.4) node [below] {$1$};
+\draw [black] (30.2,-18.9) -- (34.7,-18.9);
+\fill [black] (34.7,-18.9) -- (33.9,-18.4) -- (33.9,-19.4);
+\draw (32.45,-19.4) node [below] {$1$};
+\draw [black] (40.7,-18.9) -- (45.2,-18.9);
+\fill [black] (45.2,-18.9) -- (44.4,-18.4) -- (44.4,-19.4);
+\draw (42.95,-19.4) node [below] {$1$};
+\draw [black] (51.2,-18.9) -- (56.5,-18.9);
+\fill [black] (56.5,-18.9) -- (55.7,-18.4) -- (55.7,-19.4);
+\draw (53.85,-19.4) node [below] {$1$};
+\draw [black] (61.148,-16.407) arc (174.25644:-113.74356:2.25);
+\draw (65.98,-14.26) node [right] {$0,1$};
+\fill [black] (62.48,-18.69) -- (63.23,-19.27) -- (63.33,-18.27);
+\draw [black] (27.2,-21.9) -- (27.2,-26);
+\fill [black] (27.2,-26) -- (27.7,-25.2) -- (26.7,-25.2);
+\draw (26.7,-23.95) node [left] {$0$};
+\draw [black] (38.52,-16.02) -- (40.48,-9.18);
+\fill [black] (40.48,-9.18) -- (39.78,-9.82) -- (40.74,-10.09);
+\draw (40.27,-13.16) node [right] {$0$};
+\draw [black] (48.2,-21.9) -- (48.2,-26);
+\fill [black] (48.2,-26) -- (48.7,-25.2) -- (47.7,-25.2);
+\draw (47.7,-23.95) node [left] {$0$};
+\draw [black] (24.217,-28.774) arc (-101.76814:-157.93609:11.568);
+\fill [black] (15.86,-21.79) -- (15.69,-22.72) -- (16.62,-22.35);
+\draw (18.16,-26.82) node [below] {$0$};
+\draw [black] (29.716,-27.401) arc (111.11228:68.88772:7.591);
+\fill [black] (35.18,-27.4) -- (34.62,-26.65) -- (34.26,-27.58);
+\draw (32.45,-26.39) node [above] {$1$};
+\draw [black] (35.19,-30.606) arc (-68.75564:-111.24436:7.561);
+\fill [black] (29.71,-30.61) -- (30.27,-31.36) -- (30.64,-30.43);
+\draw (32.45,-31.62) node [below] {$0$};
+\draw [black] (37.183,-31.951) arc (-14.93022:-36.52101:17.202);
+\fill [black] (34.39,-37.76) -- (35.26,-37.41) -- (34.46,-36.82);
+\draw (36.77,-36.06) node [right] {$1$};
+\draw [black] (30.282,-37.883) arc (-141.1517:-168.24554:13.938);
+\fill [black] (27.49,-31.98) -- (27.17,-32.87) -- (28.14,-32.66);
+\draw (27.82,-36.15) node [left] {$0$};
+\draw [black] (58.842,-21.825) arc (-16.08358:-88.10793:25.268);
+\fill [black] (58.84,-21.83) -- (58.14,-22.46) -- (59.1,-22.73);
+\draw (51.09,-35.26) node [below] {$1$};
+\draw [black] (38.6,-7.6) -- (17.8,-17.6);
+\fill [black] (17.8,-17.6) -- (18.74,-17.7) -- (18.31,-16.8);
+\draw (27.21,-12.09) node [above] {$0$};
+\draw [black] (28.266,-26.196) arc (157.79703:138.51039:62.186);
+\fill [black] (28.27,-26.2) -- (29.03,-25.64) -- (28.11,-25.27);
+\draw (32.38,-15.6) node [left] {$1$};
+\draw [black] (50.44,-27) -- (57.26,-20.9);
+\fill [black] (57.26,-20.9) -- (56.33,-21.06) -- (57,-21.81);
+\draw (54.86,-24.44) node [below] {$1$};
+\draw [black] (47.614,-31.939) arc (-16.15911:-197.77856:17.602);
+\fill [black] (13.95,-21.67) -- (13.23,-22.27) -- (14.18,-22.58);
+\draw (24.72,-44.42) node [below] {$0$};
+\end{tikzpicture}
+\end{center}
+
+\item El conjunto de las cadenas tales que el número de ceros es divisible por
+cinco y el número de unos es divisible por 3.\\
+Tenemos M1 (número de ceros es divisible por cinco):
+\begin{center}
+\begin{tikzpicture}[scale=0.2]
+\tikzstyle{every node}+=[inner sep=0pt]
+\draw [black] (14.4,-18.5) circle (3);
+\draw (14.4,-18.5) node {$q_0$};
+\draw [black] (14.4,-18.5) circle (2.4);
+\draw [black] (24.9,-18.5) circle (3);
+\draw (24.9,-18.5) node {$q_1$};
+\draw [black] (34.4,-18.5) circle (3);
+\draw (34.4,-18.5) node {$q_2$};
+\draw [black] (44.9,-18.5) circle (3);
+\draw (44.9,-18.5) node {$q_3$};
+\draw [black] (55.5,-18.5) circle (3);
+\draw (55.5,-18.5) node {$q_4$};
+\draw [black] (6.9,-18.5) -- (11.4,-18.5);
+\fill [black] (11.4,-18.5) -- (10.6,-18) -- (10.6,-19);
+\draw [black] (13.077,-15.82) arc (234:-54:2.25);
+\draw (14.4,-11.25) node [above] {$1$};
+\fill [black] (15.72,-15.82) -- (16.6,-15.47) -- (15.79,-14.88);
+\draw [black] (17.4,-18.5) -- (21.9,-18.5);
+\fill [black] (21.9,-18.5) -- (21.1,-18) -- (21.1,-19);
+\draw (19.65,-19) node [below] {$0$};
+\draw [black] (23.577,-15.82) arc (234:-54:2.25);
+\draw (24.9,-11.25) node [above] {$1$};
+\fill [black] (26.22,-15.82) -- (27.1,-15.47) -- (26.29,-14.88);
+\draw [black] (33.077,-15.82) arc (234:-54:2.25);
+\draw (34.4,-11.25) node [above] {$1$};
+\fill [black] (35.72,-15.82) -- (36.6,-15.47) -- (35.79,-14.88);
+\draw [black] (43.577,-15.82) arc (234:-54:2.25);
+\draw (44.9,-11.25) node [above] {$1$};
+\fill [black] (46.22,-15.82) -- (47.1,-15.47) -- (46.29,-14.88);
+\draw [black] (54.177,-15.82) arc (234:-54:2.25);
+\draw (55.5,-11.25) node [above] {$1$};
+\fill [black] (56.82,-15.82) -- (57.7,-15.47) -- (56.89,-14.88);
+\draw [black] (27.9,-18.5) -- (31.4,-18.5);
+\fill [black] (31.4,-18.5) -- (30.6,-18) -- (30.6,-19);
+\draw (29.65,-19) node [below] {$0$};
+\draw [black] (37.4,-18.5) -- (41.9,-18.5);
+\fill [black] (41.9,-18.5) -- (41.1,-18) -- (41.1,-19);
+\draw (39.65,-19) node [below] {$0$};
+\draw [black] (47.9,-18.5) -- (52.5,-18.5);
+\fill [black] (52.5,-18.5) -- (51.7,-18) -- (51.7,-19);
+\draw (50.2,-19) node [below] {$0$};
+\draw [black] (53.13,-20.338) arc (-54.92075:-125.07925:31.634);
+\fill [black] (16.77,-20.34) -- (17.14,-21.21) -- (17.71,-20.39);
+\draw (34.95,-26.58) node [below] {$0$};
+\end{tikzpicture}
+\end{center}
+
+y M2 (número de unos es divisible por 3):
+
+\begin{center}
+\begin{tikzpicture}[scale=0.2]
+\tikzstyle{every node}+=[inner sep=0pt]
+\draw [black] (14.4,-18.5) circle (3);
+\draw (14.4,-18.5) node {$q_0$};
+\draw [black] (14.4,-18.5) circle (2.4);
+\draw [black] (24.9,-18.5) circle (3);
+\draw (24.9,-18.5) node {$q_1$};
+\draw [black] (36.2,-18.5) circle (3);
+\draw (36.2,-18.5) node {$q_2$};
+\draw [black] (6.9,-18.5) -- (11.4,-18.5);
+\fill [black] (11.4,-18.5) -- (10.6,-18) -- (10.6,-19);
+\draw [black] (17.4,-18.5) -- (21.9,-18.5);
+\fill [black] (21.9,-18.5) -- (21.1,-18) -- (21.1,-19);
+\draw (19.65,-19) node [below] {$1$};
+\draw [black] (27.9,-18.5) -- (33.2,-18.5);
+\fill [black] (33.2,-18.5) -- (32.4,-18) -- (32.4,-19);
+\draw (30.55,-19) node [below] {$1$};
+\draw [black] (34.229,-20.753) arc (-47.67222:-132.32778:13.259);
+\fill [black] (16.37,-20.75) -- (16.63,-21.66) -- (17.3,-20.92);
+\draw (25.3,-24.71) node [below] {$1$};
+\draw [black] (23.577,-15.82) arc (234:-54:2.25);
+\draw (24.9,-11.25) node [above] {$0$};
+\fill [black] (26.22,-15.82) -- (27.1,-15.47) -- (26.29,-14.88);
+\draw [black] (34.877,-15.82) arc (234:-54:2.25);
+\draw (36.2,-11.25) node [above] {$0$};
+\fill [black] (37.52,-15.82) -- (38.4,-15.47) -- (37.59,-14.88);
+\draw [black] (13.077,-15.82) arc (234:-54:2.25);
+\draw (14.4,-11.25) node [above] {$0$};
+\fill [black] (15.72,-15.82) -- (16.6,-15.47) -- (15.79,-14.88);
+\end{tikzpicture}
+\end{center}
+
+Por lo tanto obtenemos: 
+
+\begin{center}
+\begin{tikzpicture}[scale=0.2]
+\tikzstyle{every node}+=[inner sep=0pt]
+\draw [black] (10.1,-9) circle (3);
+\draw (10.1,-9) node {$q_0,_0$};
+\draw [black] (10.1,-9) circle (2.4);
+\draw [black] (21.2,-9) circle (3);
+\draw (21.2,-9) node {$q_1,_0$};
+\draw [black] (32,-9) circle (3);
+\draw (32,-9) node {$q_2,_0$};
+\draw [black] (42.3,-9) circle (3);
+\draw (42.3,-9) node {$q_3,_0$};
+\draw [black] (53,-9) circle (3);
+\draw (53,-9) node {$q_4,_0$};
+\draw [black] (10.1,-18.8) circle (3);
+\draw (10.1,-18.8) node {$q_0,_1$};
+\draw [black] (21.2,-18.8) circle (3);
+\draw (21.2,-18.8) node {$q_1,_1$};
+\draw [black] (32,-18.8) circle (3);
+\draw (32,-18.8) node {$q_2,_1$};
+\draw [black] (42.3,-18.8) circle (3);
+\draw (42.3,-18.8) node {$q_3,_1$};
+\draw [black] (53,-18.8) circle (3);
+\draw (53,-18.8) node {$q_4,_1$};
+\draw [black] (10.1,-28.6) circle (3);
+\draw (10.1,-28.6) node {$q_0,_2$};
+\draw [black] (21.2,-28.6) circle (3);
+\draw (21.2,-28.6) node {$q_1,_2$};
+\draw [black] (32,-28.6) circle (3);
+\draw (32,-28.6) node {$q_2,_2$};
+\draw [black] (42.3,-28.6) circle (3);
+\draw (42.3,-28.6) node {$q_3,_2$};
+\draw [black] (53,-28.6) circle (3);
+\draw (53,-28.6) node {$q_4,_2$};
+\draw [black] (2.6,-9) -- (7.1,-9);
+\fill [black] (7.1,-9) -- (6.3,-8.5) -- (6.3,-9.5);
+\draw [black] (13.1,-9) -- (18.2,-9);
+\fill [black] (18.2,-9) -- (17.4,-8.5) -- (17.4,-9.5);
+\draw (15.65,-9.5) node [below] {$0$};
+\draw [black] (24.2,-9) -- (29,-9);
+\fill [black] (29,-9) -- (28.2,-8.5) -- (28.2,-9.5);
+\draw (26.6,-9.5) node [below] {$0$};
+\draw [black] (35,-9) -- (39.3,-9);
+\fill [black] (39.3,-9) -- (38.5,-8.5) -- (38.5,-9.5);
+\draw (37.15,-9.5) node [below] {$0$};
+\draw [black] (45.3,-9) -- (50,-9);
+\fill [black] (50,-9) -- (49.2,-8.5) -- (49.2,-9.5);
+\draw (47.65,-9.5) node [below] {$0$};
+\draw [black] (18.845,-20.625) arc (-64.01094:-115.98906:7.292);
+\fill [black] (18.85,-20.62) -- (17.91,-20.53) -- (18.35,-21.42);
+\draw (15.65,-21.86) node [below] {$0$};
+\draw [black] (29.524,-20.459) arc (-67.44921:-112.55079:7.624);
+\fill [black] (29.52,-20.46) -- (28.59,-20.3) -- (28.98,-21.23);
+\draw (26.6,-21.54) node [below] {$0$};
+\draw [black] (39.959,-20.635) arc (-64.88832:-115.11168:6.619);
+\fill [black] (39.96,-20.64) -- (39.02,-20.52) -- (39.45,-21.43);
+\draw (37.15,-21.76) node [below] {$0$};
+\draw [black] (50.637,-20.611) arc (-64.78829:-115.21171:7.012);
+\fill [black] (50.64,-20.61) -- (49.7,-20.5) -- (50.13,-21.4);
+\draw (47.65,-21.78) node [below] {$0$};
+\draw [black] (13.1,-28.6) -- (18.2,-28.6);
+\fill [black] (18.2,-28.6) -- (17.4,-28.1) -- (17.4,-29.1);
+\draw (15.65,-29.1) node [below] {$0$};
+\draw [black] (24.2,-28.6) -- (29,-28.6);
+\fill [black] (29,-28.6) -- (28.2,-28.1) -- (28.2,-29.1);
+\draw (26.6,-29.1) node [below] {$0$};
+\draw [black] (35,-28.6) -- (39.3,-28.6);
+\fill [black] (39.3,-28.6) -- (38.5,-28.1) -- (38.5,-29.1);
+\draw (37.15,-29.1) node [below] {$0$};
+\draw [black] (45.3,-28.6) -- (50,-28.6);
+\fill [black] (50,-28.6) -- (49.2,-28.1) -- (49.2,-29.1);
+\draw (47.65,-29.1) node [below] {$0$};
+\draw [black] (53,-12) -- (53,-15.8);
+\fill [black] (53,-15.8) -- (53.5,-15) -- (52.5,-15);
+\draw (52.5,-13.9) node [left] {$1$};
+\draw [black] (53,-21.8) -- (53,-25.6);
+\fill [black] (53,-25.6) -- (53.5,-24.8) -- (52.5,-24.8);
+\draw (52.5,-23.7) node [left] {$1$};
+\draw [black] (42.3,-12) -- (42.3,-15.8);
+\fill [black] (42.3,-15.8) -- (42.8,-15) -- (41.8,-15);
+\draw (41.8,-13.9) node [left] {$1$};
+\draw [black] (42.3,-21.8) -- (42.3,-25.6);
+\fill [black] (42.3,-25.6) -- (42.8,-24.8) -- (41.8,-24.8);
+\draw (41.8,-23.7) node [left] {$1$};
+\draw [black] (33.24,-11.715) arc (14.62397:-14.62397:8.654);
+\fill [black] (33.24,-16.08) -- (33.93,-15.44) -- (32.96,-15.18);
+\draw (34.02,-13.9) node [right] {$1$};
+\draw [black] (32,-21.8) -- (32,-25.6);
+\fill [black] (32,-25.6) -- (32.5,-24.8) -- (31.5,-24.8);
+\draw (31.5,-23.7) node [left] {$1$};
+\draw [black] (21.2,-12) -- (21.2,-15.8);
+\fill [black] (21.2,-15.8) -- (21.7,-15) -- (20.7,-15);
+\draw (20.7,-13.9) node [left] {$1$};
+\draw [black] (21.2,-21.8) -- (21.2,-25.6);
+\fill [black] (21.2,-25.6) -- (21.7,-24.8) -- (20.7,-24.8);
+\draw (20.7,-23.7) node [left] {$1$};
+\draw [black] (10.1,-12) -- (10.1,-15.8);
+\fill [black] (10.1,-15.8) -- (10.6,-15) -- (9.6,-15);
+\draw (9.6,-13.9) node [left] {$1$};
+\draw [black] (10.1,-21.8) -- (10.1,-25.6);
+\fill [black] (10.1,-25.6) -- (10.6,-24.8) -- (9.6,-24.8);
+\draw (9.6,-23.7) node [left] {$1$};
+\draw [black] (50.465,-30.202) arc (-59.97703:-120.02297:37.803);
+\fill [black] (12.64,-30.2) -- (13.08,-31.04) -- (13.58,-30.17);
+\draw (31.55,-35.77) node [below] {$0$};
+\draw [black] (12.878,-7.869) arc (110.53637:69.46363:53.226);
+\fill [black] (12.88,-7.87) -- (13.8,-8.06) -- (13.45,-7.12);
+\draw (31.55,-3.99) node [above] {$0$};
+\draw [black] (8.013,-26.455) arc (-142.60283:-217.39717:12.604);
+\fill [black] (8.01,-11.15) -- (7.13,-11.48) -- (7.92,-12.08);
+\draw (4.92,-18.8) node [left] {$1$};
+\draw [black] (18.968,-26.607) arc (-138.99318:-221.00682:11.898);
+\fill [black] (18.97,-10.99) -- (18.07,-11.27) -- (18.82,-11.92);
+\draw (15.55,-18.8) node [left] {$1$};
+\draw [black] (29.898,-26.47) arc (-142.23719:-217.76281:12.525);
+\fill [black] (29.9,-11.13) -- (29.01,-11.46) -- (29.8,-12.07);
+\draw (26.77,-18.8) node [left] {$1$};
+\draw [black] (40.175,-26.492) arc (-141.69268:-218.30732:12.41);
+\fill [black] (40.18,-11.11) -- (39.29,-11.43) -- (40.07,-12.05);
+\draw (37,-18.8) node [left] {$1$};
+\draw [black] (50.965,-26.405) arc (-143.82815:-216.17185:12.886);
+\fill [black] (50.96,-11.19) -- (50.09,-11.55) -- (50.9,-12.14);
+\draw (47.98,-18.8) node [left] {$1$};
+\draw [black] (12.916,-17.766) arc (108.68691:71.31309:58.16);
+\fill [black] (12.92,-17.77) -- (13.83,-17.98) -- (13.51,-17.04);
+\draw (31.55,-14.2) node [above] {$0$};
+\end{tikzpicture}
+\end{center}
+
+
+\end{enumerate}
+
+\section{Dado el alfabeto \{x, z\}, queremos construir un autómata finito M tal que L(M) sea el lenguaje formado por las cadenas que contienen al menos una z, y cada z está inmediatamente precedida y seguida por una x. ¿Es correcta la siguiente solución? Razonar la respuesta.}
+\begin{center}
+\begin{tikzpicture}[scale=0.2]
+\tikzstyle{every node}+=[inner sep=0pt]
+\draw [black] (10.5,-26.7) circle (3);
+\draw [black] (23.9,-26.1) circle (3);
+\draw [black] (36.7,-26.7) circle (3);
+\draw [black] (50,-26.7) circle (3);
+\draw [black] (50,-26.7) circle (2.4);
+\draw [black] (4.4,-26.7) -- (7.5,-26.7);
+\fill [black] (7.5,-26.7) -- (6.7,-26.2) -- (6.7,-27.2);
+\draw [black] (13.5,-26.57) -- (20.9,-26.23);
+\fill [black] (20.9,-26.23) -- (20.08,-25.77) -- (20.13,-26.77);
+\draw (17.24,-26.94) node [below] {$x$};
+\draw [black] (23.094,-23.222) arc (223.38034:-64.61966:2.25);
+\draw (25.66,-18.87) node [above] {$x$};
+\fill [black] (25.69,-23.71) -- (26.62,-23.52) -- (25.93,-22.8);
+\draw [black] (26.82,-25.428) arc (98.30765:76.3248:18.469);
+\fill [black] (33.86,-25.76) -- (33.2,-25.08) -- (32.96,-26.05);
+\draw (30.4,-24.71) node [above] {$z$};
+\draw [black] (39.654,-26.184) arc (97.04844:82.95156:30.119);
+\fill [black] (47.05,-26.18) -- (46.31,-25.59) -- (46.19,-26.58);
+\draw (43.35,-25.46) node [above] {$x$};
+\draw [black] (48.677,-24.02) arc (234:-54:2.25);
+\draw (50,-19.45) node [above] {$x$};
+\fill [black] (51.32,-24.02) -- (52.2,-23.67) -- (51.39,-23.08);
+\draw [black] (47.631,-28.536) arc (-56.76635:-125.86748:18.915);
+\fill [black] (26.18,-28.04) -- (26.54,-28.92) -- (27.12,-28.11);
+\draw (36.82,-32.15) node [below] {$x$};
+\end{tikzpicture}
+\end{center}
+
+Respuesta: Si entendemos que en el lenguaje cada z va a tener su propia x delante y detrás, es decir, [...]xzx[...]xzx[...], el autómata si sería correcto. Pero si lo que queremos es poder hacer cadenas del tipo xzxzx, es decir que las z pueden compartir la x, el autómata estaría mal, sería de la siguiente forma:
+
+
+\begin{center}
+\begin{tikzpicture}[scale=0.2]
+\tikzstyle{every node}+=[inner sep=0pt]
+\draw [black] (10.6,-24.6) circle (3);
+\draw (10.6,-24.6) node {$q_0$};
+\draw [black] (24.2,-24.6) circle (3);
+\draw (24.2,-24.6) node {$q_1$};
+\draw [black] (38.1,-24.6) circle (3);
+\draw (38.1,-24.6) node {$q_2$};
+\draw [black] (50.9,-24.6) circle (3);
+\draw (50.9,-24.6) node {$q_3$};
+\draw [black] (50.9,-24.6) circle (2.4);
+\draw [black] (2.7,-24.6) -- (7.6,-24.6);
+\fill [black] (7.6,-24.6) -- (6.8,-24.1) -- (6.8,-25.1);
+\draw [black] (13.6,-24.6) -- (21.2,-24.6);
+\fill [black] (21.2,-24.6) -- (20.4,-24.1) -- (20.4,-25.1);
+\draw (17.4,-25.1) node [below] {$x$};
+\draw [black] (27.2,-24.6) -- (35.1,-24.6);
+\fill [black] (35.1,-24.6) -- (34.3,-24.1) -- (34.3,-25.1);
+\draw (31.15,-25.1) node [below] {$z$};
+\draw [black] (41.1,-24.6) -- (47.9,-24.6);
+\fill [black] (47.9,-24.6) -- (47.1,-24.1) -- (47.1,-25.1);
+\draw (44.5,-25.1) node [below] {$x$};
+\draw [black] (22.59,-22.083) arc (240.34019:-47.65981:2.25);
+\draw (23.23,-17.31) node [above] {$x$};
+\fill [black] (25.22,-21.79) -- (26.05,-21.34) -- (25.18,-20.85);
+\draw [black] (49.577,-21.92) arc (234:-54:2.25);
+\draw (50.9,-17.35) node [above] {$x$};
+\fill [black] (52.22,-21.92) -- (53.1,-21.57) -- (52.29,-20.98);
+\draw [black] (49.333,-27.152) arc (-37.33979:-142.66021:14.821);
+\fill [black] (25.77,-27.15) -- (25.85,-28.09) -- (26.65,-27.49);
+\draw (37.55,-33.48) node [below] {$x$};
+\draw [black] (39.858,-22.197) arc (131.53114:48.46886:7.001);
+\fill [black] (39.86,-22.2) -- (40.79,-22.04) -- (40.13,-21.29);
+\draw (44.5,-19.94) node [above] {$z$};
+\end{tikzpicture}
+\end{center}
+
+En el primer autómata siempre entre dos z habrá dos x, como mínimo; mientras que en el segundo autómata entre dos z habrá una x, como mínimo.
+
+\section{Dado el siguiente autómata M, describir el lenguaje aceptado por dicho autómata:}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.2]
+\tikzstyle{every node}+=[inner sep=0pt]
+\draw [black] (10.5,-26.7) circle (3);
+\draw [black] (23.9,-26.1) circle (3);
+\draw [black] (37.6,-26.7) circle (3);
+\draw [black] (37.6,-26.7) circle (2.4);
+\draw [black] (4.4,-26.7) -- (7.5,-26.7);
+\fill [black] (7.5,-26.7) -- (6.7,-26.2) -- (6.7,-27.2);
+\draw [black] (13.5,-26.57) -- (20.9,-26.23);
+\fill [black] (20.9,-26.23) -- (20.08,-25.77) -- (20.13,-26.77);
+\draw (17.24,-26.94) node [below] {$a$};
+\draw [black] (23.051,-23.235) arc (224.23544:-63.76456:2.25);
+\draw (25.5,-18.85) node [above] {$b$};
+\fill [black] (25.66,-23.68) -- (26.58,-23.48) -- (25.88,-22.77);
+\draw [black] (36.277,-24.02) arc (234:-54:2.25);
+\draw (37.6,-19.45) node [above] {$b$};
+\fill [black] (38.92,-24.02) -- (39.8,-23.67) -- (38.99,-23.08);
+\draw [black] (35.144,-28.402) arc (-64.34107:-120.67433:9.486);
+\fill [black] (26.2,-28.01) -- (26.63,-28.85) -- (27.14,-27.99);
+\draw (30.58,-29.87) node [below] {$a$};
+\draw [black] (9.694,-23.822) arc (223.38034:-64.61966:2.25);
+\draw (12.26,-19.47) node [above] {$b$};
+\fill [black] (12.29,-24.31) -- (13.22,-24.12) -- (12.53,-23.4);
+\draw [black] (26.747,-25.168) arc (102.59806:72.38654:15.554);
+\fill [black] (34.85,-25.52) -- (34.23,-24.8) -- (33.93,-25.76);
+\draw (30.86,-24.27) node [above] {$a$};
+\end{tikzpicture}
+\end{center}
+
+Respuesta: $L=\{b^*(ab^*ab^*)^+\}$, es decir, cualquier palabra con un número par de a.
+
+
+
+\end{document}
