@@ -4,7 +4,6 @@
 #include <stdio.h>
 
 void escribir_datos (char * nombre, char* texto);
-
 %}
 
       /*----- Alias ----------------*/
@@ -15,31 +14,35 @@ signos      ("."|"_"|"-")
 dominios    (es|com|eu|org|net|gov|edu|info|int|mil|jobs|museum)
 stf         (" "|"-")
 tlf         ({digito}{9}|{digito}{3}{stf}({digito}{6}|{digito}{3}{stf}{digito}{3}|{digito}{2}{stf}{digito}{2}{stf}{digito}{2})
+delim       (" "|";"|","|"."|"\n"|"\t")
 
 %%
       /*----- Sección de Reglas ----------------*/
 
-.                                      {}
    /*Direcciones de correo electrónico*/
-{letra}({letra}|{digito}|{signos})+"@"{letra}+("."{letra}+)+                           { escribir_datos("Correo", yytext); }
+{letra}({letra}|{digito}|{signos})*"@"{letra}+("."{letra}+)+{delim}       { escribir_datos("Correo", yytext); }
 
    /*Direcciones páginas web*/
-("www."|"http://"|"https://")?[^" "]+("."{dominios})+                                  { escribir_datos("Web", yytext); }
+("www."|"http://"|"https://")?{letra}[^ \t\n"@"]*("."{dominios})+{delim}  { escribir_datos("Web", yytext); }
 
    /*Fechas*/
-{digito}{2}("/"|"-"){digito}{2}("/"|"-")({digito}{2}|{digito}{4})                      { escribir_datos("Fecha", yytext); }
+{digito}{2}("/"|"-"){digito}{2}("/"|"-")({digito}{2}|{digito}{4}){delim}  { escribir_datos("Fecha", yytext); }
 
    /*Números de teléfono*/
-("+"{digito}+{stf})?{tlf})                                                             { escribir_datos("Telf", yytext); }
+("+"{digito}{2}{stf})?{tlf}){delim}                                       { escribir_datos("Telf", yytext); }
 
    /*Matrículas*/
-(({mayus}{2}|{mayus}){stf}?{digito}{4}{stf}?{mayus}{2}|{digito}{4}{stf}?{mayus}{3})    { escribir_datos("Matrícula", yytext); }
+(({mayus}{2}|{mayus}){stf}?{digito}{4}{stf}?({mayus}{2}|{mayus})|{digito}{4}{stf}?{mayus}{3})  { escribir_datos("Matrícula", yytext); }
 
    /*Códigos postales*/
-{digito}{5}                                                                            { escribir_datos("CP", yytext); }
+{digito}{5}{delim}                                                        { escribir_datos("CP", yytext); }
 
    /*NIF*/
-{digito}{8}{stf}?{letra}?                                                              { escribir_datos("NIF", yytext); }
+{digito}{8}{stf}?{mayus}{delim}                                           { escribir_datos("NIF", yytext); }
+
+[^ \t\n]+         { }
+[ \t]+            { }
+\n                { }
 
 %%
       /*----- Sección de Procedimientos --------*/
@@ -60,5 +63,8 @@ int main (int argc, char *argv[]) {
 }
 
 void escribir_datos (char * nombre, char* texto) {
+   if (texto[strlen(texto)-1]==' '||texto[strlen(texto)-1]==';'||texto[strlen(texto)-1]=='.'||texto[strlen(texto)-1]==','
+   ||texto[strlen(texto)-1]=='\n'||texto[strlen(texto)-1]=='\t')
+      texto[strlen(texto)-1]='\0';
    printf ("%s: %s\n",nombre,texto);
 }

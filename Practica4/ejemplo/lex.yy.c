@@ -462,13 +462,13 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "ejerciciod.l"
+#line 1 "ejemplo.l"
 /*----- Sección de Declaraciones --------------*/
-#line 4 "ejerciciod.l"
+#line 4 "ejemplo.l"
 #include <stdio.h>
 
 int nc, np, nl;
-void invertir(char * palabra);
+void escribir_datos (int dato1, int dato2, int dato3);
 #line 473 "lex.yy.c"
 
 #define INITIAL 0
@@ -687,9 +687,9 @@ YY_DECL
 		}
 
 	{
-#line 10 "ejerciciod.l"
+#line 10 "ejemplo.l"
 
-   /*----- Sección de Reglas ----------------*/
+      /*----- Sección de Reglas ----------------*/
 
 #line 695 "lex.yy.c"
 
@@ -750,23 +750,23 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 13 "ejerciciod.l"
-{ printf ("%s -",yytext); invertir(yytext); printf ("%s \n",yytext); }
+#line 13 "ejemplo.l"
+{ np++; nc += yyleng; }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 14 "ejerciciod.l"
-{ }
+#line 14 "ejemplo.l"
+{ nc += yyleng; }
 	YY_BREAK
 case 3:
 /* rule 3 can match eol */
 YY_RULE_SETUP
-#line 15 "ejerciciod.l"
-{ }
+#line 15 "ejemplo.l"
+{ nl++; nc++; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 17 "ejerciciod.l"
+#line 17 "ejemplo.l"
 ECHO;
 	YY_BREAK
 #line 773 "lex.yy.c"
@@ -1770,10 +1770,10 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 17 "ejerciciod.l"
+#line 17 "ejemplo.l"
 
 
-   /*----- Sección de Procedimientos --------*/
+      /*----- Sección de Procedimientos --------*/
 
 int main (int argc, char *argv[]) {
    if (argc == 2) {
@@ -1787,20 +1787,13 @@ int main (int argc, char *argv[]) {
 
    nc = np = nl = 0;
    yylex ();
-
+   escribir_datos(nc,np,nl);
 
    return 0;
 }
 
-void invertir(char * palabra){
-   int i;
-   char c;
-   int len = strlen(palabra);
-   for (i=0; i< len/2; i++) {
-      c = palabra[i];
-      palabra[i] = palabra[len - i - 1];
-      palabra[len - i - 1] = c;
-  }
-
+void escribir_datos (int dato1, int dato2, int dato3) {
+   printf ("Num_caracteres=%d\tNum_palabras=%d\tNum_líneas=%d\n",
+   dato1,dato2,dato3);
 }
 
