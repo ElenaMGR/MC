@@ -1,4 +1,5 @@
 #!/bin/bash
+# Para ejecutar: ./compilalex.sh <nombre.l> <ejecutable> <documento_probar>
 echo "Eliminando veriones anteriores"
 rm $2
 echo "Generando lex..."

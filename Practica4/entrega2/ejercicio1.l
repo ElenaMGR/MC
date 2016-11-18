@@ -8,7 +8,7 @@ void suma(char *texto);
 letra	[a-zA-Z]
 digito	[0-9]
 entero	{digito}+
-real	{entero}.{entero}
+real	{entero}"."{entero}
 real2	{real}[eE][\+\-]?{entero}
 numero	{entero}|{real}|{real2}
 alfanumerico	[a-zA-Z0-9]
@@ -18,11 +18,11 @@ signos ("."|","|";")
 
 {letra}[a-zA-Z0-9".""-""_"]*"@"{letra}+("."{letra}+)+{signos}?	{escribir_datos("Correo",yytext);}
 
-{entero}"+"{entero}	{suma(yytext);}
+({entero}|{real})(" "?"+"" "?({entero}|{real}))+	{suma(yytext);}
 
-[^ \t\n]+   { np++; nc += yyleng; }
-[ \t]+      { nc += yyleng; }
-\n          { nl++; nc++; }
+   /*[^ \t\n]+   { np++; nc += yyleng; }*/
+   /*[ \t]+      { nc += yyleng; }*/
+   /*\n          { nl++; nc++; }*/
 
 %%
 
@@ -52,12 +52,10 @@ void escribir_datos (char * etiqueta, char* texto) {
 }
 
 void suma(char * texto){
-	int i=0,j=0;
-	//true 1
-	//false 0
-	int enc = 1;
 	double suma = 0;
 	char * dig;
+
+   printf("%s = ",texto);
 
    dig = strtok(texto, "+");
    while (dig != NULL){
@@ -65,5 +63,5 @@ void suma(char * texto){
       dig = strtok (NULL, "+");
    }
 
-	printf("%.2f\n",suma);
+	printf("%.2f",suma);
 }

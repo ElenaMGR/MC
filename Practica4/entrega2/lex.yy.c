@@ -375,8 +375,8 @@ static void yy_fatal_error (yyconst char msg[]  );
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
 
-#define YY_NUM_RULES 6
-#define YY_END_OF_BUFFER 7
+#define YY_NUM_RULES 3
+#define YY_END_OF_BUFFER 4
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -384,29 +384,29 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static yyconst flex_int16_t yy_accept[22] =
+static yyconst flex_int16_t yy_accept[24] =
     {   0,
-        0,    0,    7,    3,    4,    5,    3,    3,    3,    4,
-        3,    3,    3,    3,    2,    3,    3,    1,    1,    1,
-        0
+        0,    0,    4,    3,    3,    3,    0,    0,    0,    0,
+        0,    0,    0,    2,    0,    0,    0,    0,    2,    1,
+        1,    1,    0
     } ;
 
 static yyconst YY_CHAR yy_ec[256] =
     {   0,
-        1,    1,    1,    1,    1,    1,    1,    1,    2,    3,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    2,    1,    4,    1,    1,    1,    1,    1,    1,
-        1,    1,    5,    6,    1,    7,    1,    8,    8,    8,
-        8,    8,    8,    8,    8,    8,    8,    1,    9,    1,
-        1,    1,    1,   10,   11,   11,   11,   11,   11,   11,
-       11,   11,   11,   11,   11,   11,   11,   11,   11,   11,
-       11,   11,   11,   11,   11,   11,   11,   11,   11,   11,
-        1,    1,    1,    1,    4,    1,   11,   11,   11,   11,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    2,    1,    3,    1,    1,    1,    1,    1,    1,
+        1,    1,    4,    5,    1,    6,    1,    7,    7,    7,
+        7,    7,    7,    7,    7,    7,    7,    1,    8,    1,
+        1,    1,    1,    9,   10,   10,   10,   10,   10,   10,
+       10,   10,   10,   10,   10,   10,   10,   10,   10,   10,
+       10,   10,   10,   10,   10,   10,   10,   10,   10,   10,
+        1,    1,    1,    1,    3,    1,   10,   10,   10,   10,
 
-       11,   11,   11,   11,   11,   11,   11,   11,   11,   11,
-       11,   11,   11,   11,   11,   11,   11,   11,   11,   11,
-       11,   11,    1,    1,    1,    1,    1,    1,    1,    1,
+       10,   10,   10,   10,   10,   10,   10,   10,   10,   10,
+       10,   10,   10,   10,   10,   10,   10,   10,   10,   10,
+       10,   10,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -423,46 +423,43 @@ static yyconst YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static yyconst YY_CHAR yy_meta[12] =
+static yyconst YY_CHAR yy_meta[11] =
     {   0,
-        1,    2,    2,    1,    1,    1,    1,    1,    1,    1,
-        1
+        1,    1,    2,    1,    1,    2,    2,    1,    2,    2
     } ;
 
-static yyconst flex_uint16_t yy_base[24] =
+static yyconst flex_uint16_t yy_base[26] =
     {   0,
-        0,   10,   24,    0,   21,   50,   17,   25,    0,   18,
-       11,    0,    0,    6,    8,   30,    4,   36,    0,    3,
-       50,   47,    0
+        0,    4,   33,   48,   13,   23,   26,   19,   18,    0,
+       15,   13,   15,   21,   27,   29,   11,    6,    6,   35,
+       48,    2,   48,   45,    0
     } ;
 
-static yyconst flex_int16_t yy_def[24] =
+static yyconst flex_int16_t yy_def[26] =
     {   0,
-       22,   22,   21,   23,   21,   21,   23,   21,   23,   21,
-       23,    7,    8,   23,   23,   23,   23,   23,   23,   23,
-        0,   21,   21
+       24,   24,   23,   23,   23,   25,   23,   23,   23,    5,
+       25,   23,   23,    5,   23,   23,   23,   23,   15,   23,
+       23,   23,    0,   23,   23
     } ;
 
-static yyconst flex_uint16_t yy_nxt[62] =
+static yyconst flex_uint16_t yy_nxt[59] =
     {   0,
-        9,    5,    6,   21,   21,   21,   21,    7,   21,   21,
-        8,    5,    6,   18,   18,   15,   16,    7,   15,   10,
-        8,   11,   10,   21,   12,    9,   21,   21,   13,    9,
-        9,   13,   13,    9,   14,   13,   17,   21,   21,   21,
-       16,   19,   20,   21,   19,   21,   18,    4,    4,    3,
-       21,   21,   21,   21,   21,   21,   21,   21,   21,   21,
-       21
+       23,   11,   23,   23,   23,   23,    5,   23,   23,    6,
+        5,   20,   19,    6,    7,   20,    8,   19,    9,   10,
+       13,   14,   16,   12,   15,   14,   17,   14,    7,    8,
+        8,   12,   23,   15,   18,   23,   23,   23,   16,   21,
+       22,   23,   21,   23,   20,    4,    4,    3,   23,   23,
+       23,   23,   23,   23,   23,   23,   23,   23
     } ;
 
-static yyconst flex_int16_t yy_chk[62] =
+static yyconst flex_int16_t yy_chk[59] =
     {   0,
-       23,    1,    1,    0,    0,    0,    0,    1,    0,    0,
-        1,    2,    2,   20,   17,   15,   14,    2,   11,   10,
-        2,    7,    5,    3,    7,    8,    0,    0,    8,    8,
-        8,    8,    8,    8,    8,    8,   16,    0,    0,    0,
-       16,   18,   18,    0,   18,    0,   18,   22,   22,   21,
-       21,   21,   21,   21,   21,   21,   21,   21,   21,   21,
-       21
+        0,   25,    0,    0,    0,    0,    1,    0,    0,    1,
+        2,   22,   19,    2,    5,   18,    5,   17,    5,    5,
+        8,   13,   12,   11,    9,    8,   14,   14,   15,    7,
+       15,    6,    3,   15,   16,    0,    0,    0,   16,   20,
+       20,    0,   20,    0,   20,   24,   24,   23,   23,   23,
+       23,   23,   23,   23,   23,   23,   23,   23
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -485,7 +482,7 @@ char *yytext;
 int nc, np, nl;
 void escribir_datos(char * etiqueta, char* texto);
 void suma(char *texto);
-#line 489 "lex.yy.c"
+#line 486 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -706,7 +703,7 @@ YY_DECL
 #line 17 "ejercicio1.l"
 
 
-#line 710 "lex.yy.c"
+#line 707 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -733,13 +730,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 22 )
+				if ( yy_current_state >= 24 )
 					yy_c = yy_meta[(unsigned int) yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 50 );
+		while ( yy_base[yy_current_state] != 48 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -773,28 +770,15 @@ YY_RULE_SETUP
 #line 21 "ejercicio1.l"
 {suma(yytext);}
 	YY_BREAK
+/*[^ \t\n]+   { np++; nc += yyleng; }*/
+/*[ \t]+      { nc += yyleng; }*/
+/*\n          { nl++; nc++; }*/
 case 3:
-YY_RULE_SETUP
-#line 23 "ejercicio1.l"
-{ np++; nc += yyleng; }
-	YY_BREAK
-case 4:
-YY_RULE_SETUP
-#line 24 "ejercicio1.l"
-{ nc += yyleng; }
-	YY_BREAK
-case 5:
-/* rule 5 can match eol */
-YY_RULE_SETUP
-#line 25 "ejercicio1.l"
-{ nl++; nc++; }
-	YY_BREAK
-case 6:
 YY_RULE_SETUP
 #line 27 "ejercicio1.l"
 ECHO;
 	YY_BREAK
-#line 798 "lex.yy.c"
+#line 782 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1087,7 +1071,7 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 22 )
+			if ( yy_current_state >= 24 )
 				yy_c = yy_meta[(unsigned int) yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
@@ -1115,11 +1099,11 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 22 )
+		if ( yy_current_state >= 24 )
 			yy_c = yy_meta[(unsigned int) yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
-	yy_is_jam = (yy_current_state == 21);
+	yy_is_jam = (yy_current_state == 23);
 
 		return yy_is_jam ? 0 : yy_current_state;
 }
@@ -1825,12 +1809,10 @@ void escribir_datos (char * etiqueta, char* texto) {
 }
 
 void suma(char * texto){
-	int i=0,j=0;
-	//true 1
-	//false 0
-	int enc = 1;
 	double suma = 0;
 	char * dig;
+
+   printf("%s = ",texto);
 
    dig = strtok(texto, "+");
    while (dig != NULL){
@@ -1838,6 +1820,6 @@ void suma(char * texto){
       dig = strtok (NULL, "+");
    }
 
-	printf("%.2f\n",suma);
+	printf("%.2f",suma);
 }
 
