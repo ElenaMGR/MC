@@ -1,9 +1,11 @@
 
 %{
 #include <stdio.h>
+#include <math.h>
 int nc, np, nl;
 void escribir_datos(char * etiqueta, char* texto);
 void suma(char *texto);
+void potencia(char *texto);
 %}
 letra	[a-zA-Z]
 digito	[0-9]
@@ -19,6 +21,8 @@ signos ("."|","|";")
 {letra}[a-zA-Z0-9".""-""_"]*"@"{letra}+("."{letra}+)+{signos}?	{escribir_datos("Correo",yytext);}
 
 ({entero}|{real})(" "?("+"|"-")" "?({entero}|{real}))+	{suma(yytext);}
+({entero}|{real})" "?"^"" "?({entero}|{real})           {potencia(yytext);}
+
 
    /*[^ \t\n]+   { np++; nc += yyleng; }*/
    /*[ \t]+      { nc += yyleng; }*/
@@ -51,6 +55,7 @@ void escribir_datos (char * etiqueta, char* texto) {
   printf ("%s: %s\n",etiqueta,texto);
 }
 
+// Suma de polinomios sencillos
 void suma(char * texto){
 	double suma = 0;
 	char * dig;
@@ -88,6 +93,23 @@ void suma(char * texto){
         aux[0]= operador[j];
         dig = strtok (NULL, aux);
     }
+
+	printf("%.2f",suma);
+}
+
+void potencia(char * texto){
+	double suma = 0;
+  double base,exponente;
+	char * dig;
+
+  printf("%s = ",texto);
+
+  dig = strtok(texto, "^");
+  base = atof(dig)*1.0;
+  dig = strtok(NULL, "^");
+  exponente = atof(dig)*1.0;
+
+  suma = pow(base,exponente);
 
 	printf("%.2f",suma);
 }
