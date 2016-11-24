@@ -397,16 +397,16 @@ static yyconst YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    2,    1,    3,    1,    1,    1,    1,    1,    1,
-        1,    1,    4,    5,    1,    6,    1,    7,    7,    7,
-        7,    7,    7,    7,    7,    7,    7,    1,    8,    1,
-        1,    1,    1,    9,   10,   10,   10,   10,   10,   10,
-       10,   10,   10,   10,   10,   10,   10,   10,   10,   10,
-       10,   10,   10,   10,   10,   10,   10,   10,   10,   10,
-        1,    1,    1,    1,    3,    1,   10,   10,   10,   10,
+        1,    1,    4,    5,    6,    7,    1,    8,    8,    8,
+        8,    8,    8,    8,    8,    8,    8,    1,    9,    1,
+        1,    1,    1,   10,   11,   11,   11,   11,   11,   11,
+       11,   11,   11,   11,   11,   11,   11,   11,   11,   11,
+       11,   11,   11,   11,   11,   11,   11,   11,   11,   11,
+        1,    1,    1,    1,    3,    1,   11,   11,   11,   11,
 
-       10,   10,   10,   10,   10,   10,   10,   10,   10,   10,
-       10,   10,   10,   10,   10,   10,   10,   10,   10,   10,
-       10,   10,    1,    1,    1,    1,    1,    1,    1,    1,
+       11,   11,   11,   11,   11,   11,   11,   11,   11,   11,
+       11,   11,   11,   11,   11,   11,   11,   11,   11,   11,
+       11,   11,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -423,43 +423,46 @@ static yyconst YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static yyconst YY_CHAR yy_meta[11] =
+static yyconst YY_CHAR yy_meta[12] =
     {   0,
-        1,    1,    2,    1,    1,    2,    2,    1,    2,    2
+        1,    1,    2,    1,    1,    1,    2,    2,    1,    2,
+        2
     } ;
 
 static yyconst flex_uint16_t yy_base[26] =
     {   0,
-        0,    4,   33,   48,   13,   23,   26,   19,   18,    0,
-       15,   13,   15,   21,   27,   29,   11,    6,    6,   35,
-       48,    2,   48,   45,    0
+        0,    4,   31,   51,   14,   20,   19,   24,   21,    0,
+       18,   16,   16,   26,   28,   30,   11,    6,    6,   37,
+       51,    2,   51,   48,    0
     } ;
 
 static yyconst flex_int16_t yy_def[26] =
     {   0,
        24,   24,   23,   23,   23,   25,   23,   23,   23,    5,
-       25,   23,   23,    5,   23,   23,   23,   23,   15,   23,
+       25,   23,   23,    5,    5,   23,   23,   23,   15,   23,
        23,   23,    0,   23,   23
     } ;
 
-static yyconst flex_uint16_t yy_nxt[59] =
+static yyconst flex_uint16_t yy_nxt[63] =
     {   0,
-       23,   11,   23,   23,   23,   23,    5,   23,   23,    6,
-        5,   20,   19,    6,    7,   20,    8,   19,    9,   10,
-       13,   14,   16,   12,   15,   14,   17,   14,    7,    8,
-        8,   12,   23,   15,   18,   23,   23,   23,   16,   21,
-       22,   23,   21,   23,   20,    4,    4,    3,   23,   23,
-       23,   23,   23,   23,   23,   23,   23,   23
+       23,   11,   23,   23,   23,   23,   23,    5,   23,   23,
+        6,    5,   20,   19,    6,    7,   20,    8,   19,    8,
+        9,   10,    8,   14,    8,   13,   16,   12,   15,   12,
+       23,   14,   17,   14,   23,   15,   18,   23,   23,   23,
+       16,   21,   23,   22,   23,   21,   23,   20,    4,    4,
+        3,   23,   23,   23,   23,   23,   23,   23,   23,   23,
+       23,   23
     } ;
 
-static yyconst flex_int16_t yy_chk[59] =
+static yyconst flex_int16_t yy_chk[63] =
     {   0,
-        0,   25,    0,    0,    0,    0,    1,    0,    0,    1,
-        2,   22,   19,    2,    5,   18,    5,   17,    5,    5,
-        8,   13,   12,   11,    9,    8,   14,   14,   15,    7,
-       15,    6,    3,   15,   16,    0,    0,    0,   16,   20,
-       20,    0,   20,    0,   20,   24,   24,   23,   23,   23,
-       23,   23,   23,   23,   23,   23,   23,   23
+        0,   25,    0,    0,    0,    0,    0,    1,    0,    0,
+        1,    2,   22,   19,    2,    5,   18,    5,   17,    5,
+        5,    5,    7,   13,    7,    8,   12,   11,    9,    6,
+        3,    8,   14,   14,   15,   15,   16,    0,    0,    0,
+       16,   20,    0,   20,    0,   20,    0,   20,   24,   24,
+       23,   23,   23,   23,   23,   23,   23,   23,   23,   23,
+       23,   23
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -482,7 +485,7 @@ char *yytext;
 int nc, np, nl;
 void escribir_datos(char * etiqueta, char* texto);
 void suma(char *texto);
-#line 486 "lex.yy.c"
+#line 489 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -703,7 +706,7 @@ YY_DECL
 #line 17 "ejercicio1.l"
 
 
-#line 707 "lex.yy.c"
+#line 710 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -736,7 +739,7 @@ yy_match:
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 48 );
+		while ( yy_base[yy_current_state] != 51 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -778,7 +781,7 @@ YY_RULE_SETUP
 #line 27 "ejercicio1.l"
 ECHO;
 	YY_BREAK
-#line 782 "lex.yy.c"
+#line 785 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1811,14 +1814,44 @@ void escribir_datos (char * etiqueta, char* texto) {
 void suma(char * texto){
 	double suma = 0;
 	char * dig;
+  //double signo = 1.0;
 
    printf("%s = ",texto);
 
-   dig = strtok(texto, "+");
-   while (dig != NULL){
-      suma += atof(dig);
-      dig = strtok (NULL, "+");
+   int i=0;
+   int j=0;
+   double signo[strlen(texto)];
+   signo[0] = 1;
+   char operador [strlen(texto)];
+
+   for(i=0; i < strlen(texto);i++){
+     switch(texto[i]) {
+       case '+': signo[j+1]= 1;
+                 operador[j] = texto[i];
+                 j++;
+          break;
+       case '-': signo[j+1]= -1;
+                 operador[j] = texto[i];
+                 j++;
+          break;
+    };
    }
+
+   j = 0;
+   char * aux = malloc(sizeof(char)*2);
+   aux[0] = operador[j];
+   aux[1] = '\0';
+   dig = strtok(texto, aux);
+   while (dig != NULL){
+        //printf("%.2f$%s#",signo[j],dig);
+        suma += atof(dig)*signo[j];
+        j++;
+        aux[0]= operador[j];
+        dig = strtok (NULL, aux);
+
+    }
+
+
 
 	printf("%.2f",suma);
 }

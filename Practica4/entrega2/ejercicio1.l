@@ -18,7 +18,7 @@ signos ("."|","|";")
 
 {letra}[a-zA-Z0-9".""-""_"]*"@"{letra}+("."{letra}+)+{signos}?	{escribir_datos("Correo",yytext);}
 
-({entero}|{real})(" "?"+"" "?({entero}|{real}))+	{suma(yytext);}
+({entero}|{real})(" "?("+"|"-")" "?({entero}|{real}))+	{suma(yytext);}
 
    /*[^ \t\n]+   { np++; nc += yyleng; }*/
    /*[ \t]+      { nc += yyleng; }*/
@@ -57,11 +57,37 @@ void suma(char * texto){
 
    printf("%s = ",texto);
 
-   dig = strtok(texto, "+");
-   while (dig != NULL){
-      suma += atof(dig);
-      dig = strtok (NULL, "+");
+   int i=0;
+   int j=0;
+   double signo[strlen(texto)];
+   signo[0] = 1;
+   char operador [strlen(texto)];
+
+   for(i=0; i < strlen(texto);i++){
+     switch(texto[i]) {
+       case '+': signo[j+1]= 1;
+                 operador[j] = texto[i];
+                 j++;
+          break;
+       case '-': signo[j+1]= -1;
+                 operador[j] = texto[i];
+                 j++;
+          break;
+    };
    }
+
+   j = 0;
+   char * aux = malloc(sizeof(char)*2);
+   aux[0] = operador[j];
+   aux[1] = '\0';
+
+   dig = strtok(texto, aux);
+   while (dig != NULL){
+        suma += atof(dig)*signo[j];
+        j++;
+        aux[0]= operador[j];
+        dig = strtok (NULL, aux);
+    }
 
 	printf("%.2f",suma);
 }
