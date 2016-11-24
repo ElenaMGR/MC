@@ -21,9 +21,10 @@ signos ("."|","|";")
 
 {letra}[a-zA-Z0-9".""-""_"]*"@"{letra}+("."{letra}+)+{signos}?	{escribir_datos("Correo",yytext);}
 
-({entero}|{real})(" "?("+"|"-")" "?({entero}|{real}))+	{suma(yytext);}
+("+"|"-")?" "?({entero}|{real})(" "?("+"|"-")" "?({entero}|{real}))+	{suma(yytext);}
 ({entero}|{real})" "?"^"" "?({entero}|{real})           {potencia(yytext);}
 "sqrt("({entero}|{real})")"                             {raiz(yytext);}
+
 
    /*[^ \t\n]+   { np++; nc += yyleng; }*/
    /*[ \t]+      { nc += yyleng; }*/
@@ -66,10 +67,12 @@ void suma(char * texto){
    int i=0;
    int j=0;
    double signo[strlen(texto)];
-   signo[0] = 1;
+   signo[0] = (texto[0]=='-')?-1:1;
+
+
    char operador [strlen(texto)];
 
-   for(i=0; i < strlen(texto);i++){
+   for(i=1; i < strlen(texto);i++){
      switch(texto[i]) {
        case '+': signo[j+1]= 1;
                  operador[j] = texto[i];
@@ -80,6 +83,7 @@ void suma(char * texto){
                  j++;
           break;
     };
+
    }
 
    j = 0;
@@ -117,7 +121,6 @@ void potencia(char * texto){
 
 void raiz(char * texto){
 	double suma = 0;
-//  double aux;
 	char * dig;
 
   printf("%s = ",texto);
