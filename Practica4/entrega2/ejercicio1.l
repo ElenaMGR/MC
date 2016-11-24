@@ -6,6 +6,7 @@ int nc, np, nl;
 void escribir_datos(char * etiqueta, char* texto);
 void suma(char *texto);
 void potencia(char *texto);
+void raiz(char *texto);
 %}
 letra	[a-zA-Z]
 digito	[0-9]
@@ -22,7 +23,7 @@ signos ("."|","|";")
 
 ({entero}|{real})(" "?("+"|"-")" "?({entero}|{real}))+	{suma(yytext);}
 ({entero}|{real})" "?"^"" "?({entero}|{real})           {potencia(yytext);}
-
+"sqrt("({entero}|{real})")"                             {raiz(yytext);}
 
    /*[^ \t\n]+   { np++; nc += yyleng; }*/
    /*[ \t]+      { nc += yyleng; }*/
@@ -110,6 +111,20 @@ void potencia(char * texto){
   exponente = atof(dig)*1.0;
 
   suma = pow(base,exponente);
+
+	printf("%.2f",suma);
+}
+
+void raiz(char * texto){
+	double suma = 0;
+//  double aux;
+	char * dig;
+
+  printf("%s = ",texto);
+
+// sqrt( = 5 caracteres, por lo que size() - 5 + 1 (ultimo parentesis)  = nº de numeros
+  strncpy( dig, texto+5,strlen(texto)-6);
+  suma = sqrt(atof(dig)*1.0);
 
 	printf("%.2f",suma);
 }
