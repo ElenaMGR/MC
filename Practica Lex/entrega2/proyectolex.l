@@ -12,6 +12,7 @@ void producto(string texto);
 void potencia(char * texto);
 void raiz(char * texto);
 void funcion(char *texto,char fun);
+void op(string texto);
 %}
 
       /*----- Alias ----------------*/
@@ -21,13 +22,16 @@ real	{entero}"."{entero}
 real2	{real}[eE][\+\-]?{entero}
 numero	{entero}|{real}|{real2}
 signos ("."|","|";")
+suma (" "?("+"|"-")" "?({entero}|{real}))
+producto (" "?("*"|"/")" "?({entero}|{real}))
 %%
 
       /*----- Sección de Reglas ----------------*/
+(("+"|"-")" "?)?({entero}|{real})({suma}|{producto})+                               {op(yytext);}
       /*Suma y resta*/
-(("+"|"-")" "?)?({entero}|{real})(" "?("+"|"-")" "?({entero}|{real}))+	{suma(yytext);}
+      /*(("+"|"-")" "?)?({entero}|{real})(" "?("+"|"-")" "?({entero}|{real}))+	{suma(yytext);}*/
       /*Multiplicación y división*/
-({entero}|{real})(" "?("*"|"/")" "?({entero}|{real}))+  {producto(yytext);}
+      /*({entero}|{real})(" "?("*"|"/")" "?({entero}|{real}))+  {producto(yytext);}*/
       /*Potencia*/
 ({entero}|{real})" "?"^"" "?({entero}|{real})           {potencia(yytext);}
       /*Raíz*/
@@ -61,7 +65,45 @@ int main (int argc, char *argv[]) {
    return 0;
 }
 
+void op(string texto){
+   double operacion = 0;
+	string dig;
+   size_t pos_ant = 0, pos;
+   size_t it = 0;
 
+   cout<<texto<<" = ";
+
+   vector<string> elemento;
+
+   // Eliminamos los espacios, si los hay
+   while (it != string::npos){
+      it = texto.find_first_of(" ");
+      if (it<string::npos)
+         texto.erase(it,1);
+   }
+
+   // Extraemos las operaciones
+   while (pos_ant < texto.size()){
+      pos = texto.find_first_of("*/+-",pos_ant+1);
+      dig = texto.substr(pos_ant,pos-pos_ant);
+      elemento.push_back(dig);
+      pos_ant=pos;
+   }
+
+   // Realizamos el cálculo
+   operacion = stod(elemento[0]);
+   for (int i = 1; i< elemento.size(); i++){
+      if (elemento[i].at(0)=='-' || elemento[i].at(0)=='+')
+         operacion += stod(elemento[i]);
+      if (elemento[i].at(0)=='*')
+         operacion *= stod(elemento[i].substr(1,elemento[i].size()-1));
+      if (elemento[i].at(0)=='/')
+         operacion /= stod(elemento[i].substr(1,elemento[i].size()-1));
+   }
+
+   // Imprimimos la suma total
+	cout<<operacion;
+}
 //Suma de polinomios sencillos
 void suma(string texto){
 	double suma = 0;
