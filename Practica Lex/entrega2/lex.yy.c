@@ -384,16 +384,16 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static yyconst flex_int16_t yy_accept[75] =
+static yyconst flex_int16_t yy_accept[74] =
     {   0,
         0,    0,   10,    9,    9,    9,    9,    9,    9,    9,
-        9,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-        0,    0,    0,    0,    0,    0,    0,    0,    8,    0,
-        1,    0,    0,    2,    0,    0,    0,    0,    0,    0,
-        0,    0,    0,    0,    0,    0,    0,    0,    0,    8,
-        1,    2,    0,    0,    0,    0,    0,    5,    0,    4,
-        0,    6,    0,    0,    7,    0,    0,    0,    0,    3,
-        0,    0,    0,    0
+        0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+        0,    0,    0,    0,    0,    0,    0,    2,    0,    1,
+        0,    0,    3,    0,    0,    0,    0,    0,    0,    0,
+        0,    0,    0,    0,    0,    0,    0,    0,    2,    1,
+        3,    0,    0,    0,    0,    0,    6,    0,    5,    0,
+        7,    0,    0,    8,    0,    0,    0,    0,    4,    0,
+        0,    0,    0
     } ;
 
 static yyconst YY_CHAR yy_ec[256] =
@@ -435,70 +435,70 @@ static yyconst YY_CHAR yy_meta[24] =
         1,    1,    1
     } ;
 
-static yyconst flex_uint16_t yy_base[76] =
+static yyconst flex_uint16_t yy_base[75] =
     {   0,
-        0,   22,  129,  130,  118,    1,   44,  108,  107,    0,
-      113,   54,  114,   60,    2,   16,  113,    0,   17,  100,
-      106,  102,  101,   97,   99,    2,  106,  105,   70,  104,
-       23,   26,  103,   30,  109,  108,  107,   86,  105,   33,
-       16,   97,   96,   95,   94,   92,   90,   96,   74,   49,
-       63,   58,   66,   73,   78,   53,   81,  130,   48,  130,
-       37,  130,   27,   86,  130,   20,   38,   83,   88,  130,
-        5,   91,   93,  130,    0
+        0,   18,  127,  128,    1,   40,  107,  106,    0,  112,
+      113,   50,   56,    2,   16,  112,    0,   17,   99,  105,
+      101,  100,   96,   98,    2,  105,  104,   66,  103,   22,
+       26,  102,   29,  108,  107,  106,   85,  104,   45,   24,
+       96,   95,   94,   93,   91,   90,   96,   88,   56,   73,
+       70,   69,   74,   77,   62,   82,  128,   60,  128,   59,
+      128,   49,   85,  128,   44,   11,   34,   84,  128,   33,
+       87,   92,  128,    0
     } ;
 
-static yyconst flex_int16_t yy_def[76] =
+static yyconst flex_int16_t yy_def[75] =
     {   0,
-       75,   75,   74,   74,   74,   74,   74,   74,   74,   74,
-       74,   74,   74,   74,   74,   74,   74,    7,   74,   74,
-       74,   74,   74,   74,   74,   74,   74,   74,   74,   74,
-       12,    7,   74,   74,   74,   74,   74,   74,   74,   12,
-       74,   74,   74,   74,   74,   74,   74,   74,   74,   29,
-       40,   74,   74,   74,   74,   74,   74,   74,   74,   74,
-       74,   74,   74,   74,   74,   74,   74,   74,   74,   74,
-       74,   74,   74,    0,   74
+       74,   74,   73,   73,   73,   73,   73,   73,   73,   73,
+       73,   73,   73,   73,   73,   73,    6,   73,   73,   73,
+       73,   73,   73,   73,   73,   73,   73,   73,   73,   12,
+        6,   73,   73,   73,   73,   73,   73,   73,   12,   73,
+       73,   73,   73,   73,   73,   73,   73,   73,   28,   39,
+       73,   73,   73,   73,   73,   73,   73,   73,   73,   73,
+       73,   73,   73,   73,   73,   73,   73,   73,   73,   73,
+       73,   73,    0,   73
     } ;
 
-static yyconst flex_uint16_t yy_nxt[154] =
+static yyconst flex_uint16_t yy_nxt[152] =
     {   0,
-        4,    5,   13,   28,   74,    6,    6,   16,   16,    7,
-       12,   29,    8,   22,   73,   23,    9,   30,   33,   24,
-       15,   10,   11,    5,   15,   31,   34,    6,    6,   72,
-       43,    7,   31,   74,    8,   32,   69,   44,    9,   34,
-       74,   58,   40,   10,   11,   14,   68,   67,   15,   16,
-       16,   17,   15,   18,   19,   26,   74,   67,   50,   16,
-       16,   27,   64,   12,   15,   16,   16,   52,   15,   58,
-       19,   41,   51,   59,   15,   53,   60,   42,   15,   29,
-       61,   62,   54,   57,   65,   63,   60,   55,   66,   70,
-       57,   62,   68,   71,   65,   64,   70,   69,   56,   55,
+        4,   73,   11,   27,   73,    5,    5,   15,   15,    6,
+       12,   28,    7,   21,   57,   22,    8,   29,   32,   23,
+       66,    9,   10,    5,    5,   30,   33,    6,   14,   42,
+        7,   30,   14,   73,    8,   31,   43,   59,   33,    9,
+       10,   13,   72,   67,   14,   15,   15,   16,   14,   17,
+       18,   25,   73,   71,   39,   15,   15,   26,   68,   12,
+       14,   15,   15,   73,   14,   49,   18,   40,   67,   66,
+       14,   63,   57,   41,   14,   28,   58,   59,   52,   51,
+       61,   60,   50,   53,   62,   64,   54,   61,   69,   65,
+       64,   56,   70,   68,   63,   69,   71,   56,   55,   54,
 
-       72,   54,   73,   53,   52,   51,   50,   49,   48,   47,
-       46,   45,   34,   31,   29,   40,   39,   38,   37,   37,
-       36,   35,   32,   12,   25,   21,   20,   12,   74,    3,
-       74,   74,   74,   74,   74,   74,   74,   74,   74,   74,
-       74,   74,   74,   74,   74,   74,   74,   74,   74,   74,
-       74,   74,   74
+       53,   72,   52,   51,   50,   49,   48,   47,   46,   45,
+       44,   33,   30,   28,   39,   38,   37,   36,   36,   35,
+       34,   31,   12,   24,   20,   19,   73,    3,   73,   73,
+       73,   73,   73,   73,   73,   73,   73,   73,   73,   73,
+       73,   73,   73,   73,   73,   73,   73,   73,   73,   73,
+       73
     } ;
 
-static yyconst flex_int16_t yy_chk[154] =
+static yyconst flex_int16_t yy_chk[152] =
     {   0,
-       75,    1,    6,   15,    0,    1,    1,   26,   26,    1,
-        6,   15,    1,   10,   71,   10,    1,   16,   19,   10,
-       41,    1,    1,    2,   41,   16,   19,    2,    2,   66,
-       31,    2,   31,   32,    2,   32,   63,   34,    2,   34,
-       40,   67,   40,    2,    2,    7,   61,   67,    7,    7,
-        7,    7,    7,    7,    7,   12,   50,   59,   50,   12,
-       12,   12,   56,   12,   14,   14,   14,   52,   14,   53,
-       14,   29,   51,   53,   29,   53,   54,   29,   29,   29,
-       54,   55,   54,   49,   57,   55,   68,   55,   57,   64,
-       57,   69,   68,   64,   72,   64,   73,   69,   48,   47,
+       74,    0,    5,   14,    0,    1,    1,   25,   25,    1,
+        5,   14,    1,    9,   66,    9,    1,   15,   18,    9,
+       66,    1,    1,    2,    2,   15,   18,    2,   40,   30,
+        2,   30,   40,   31,    2,   31,   33,   67,   33,    2,
+        2,    6,   70,   67,    6,    6,    6,    6,    6,    6,
+        6,   12,   39,   65,   39,   12,   12,   12,   62,   12,
+       13,   13,   13,   49,   13,   49,   13,   28,   60,   58,
+       28,   55,   52,   28,   28,   28,   52,   53,   52,   51,
+       54,   53,   50,   53,   54,   56,   54,   68,   63,   56,
+       71,   56,   63,   68,   63,   72,   71,   48,   47,   46,
 
-       72,   46,   73,   45,   44,   43,   42,   39,   38,   37,
-       36,   35,   33,   30,   28,   27,   25,   24,   23,   22,
-       21,   20,   17,   13,   11,    9,    8,    5,    3,   74,
-       74,   74,   74,   74,   74,   74,   74,   74,   74,   74,
-       74,   74,   74,   74,   74,   74,   74,   74,   74,   74,
-       74,   74,   74
+       45,   72,   44,   43,   42,   41,   38,   37,   36,   35,
+       34,   32,   29,   27,   26,   24,   23,   22,   21,   20,
+       19,   16,   11,   10,    8,    7,    3,   73,   73,   73,
+       73,   73,   73,   73,   73,   73,   73,   73,   73,   73,
+       73,   73,   73,   73,   73,   73,   73,   73,   73,   73,
+       73
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -515,18 +515,23 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "ejercicio2.l"
-#line 3 "ejercicio2.l"
+#line 1 "proyectolex.l"
+/*----- Sección de Declaraciones --------------*/
+#line 3 "proyectolex.l"
 #include <stdio.h>
 #include <math.h>
-int nc, np, nl;
-void escribir_datos(char * etiqueta, char* texto);
-void suma(char *texto);
-void producto(char * texto);
-void potencia(char *texto);
-void raiz(char *texto);
+#include <string>
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void suma(string texto);
+void producto(string texto);
+void potencia(char * texto);
+void raiz(char * texto);
 void funcion(char *texto,char fun);
-#line 530 "lex.yy.c"
+/*----- Alias ----------------*/
+#line 535 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -744,9 +749,12 @@ YY_DECL
 		}
 
 	{
-#line 22 "ejercicio2.l"
+#line 24 "proyectolex.l"
 
-#line 750 "lex.yy.c"
+
+      /*----- Sección de Reglas ----------------*/
+      /*Suma y resta*/
+#line 758 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -773,13 +781,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 75 )
+				if ( yy_current_state >= 74 )
 					yy_c = yy_meta[(unsigned int) yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 130 );
+		while ( yy_base[yy_current_state] != 128 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -805,53 +813,57 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 23 "ejercicio2.l"
+#line 28 "proyectolex.l"
 {suma(yytext);}
 	YY_BREAK
+/*Multiplicación y división*/
 case 2:
 YY_RULE_SETUP
-#line 24 "ejercicio2.l"
-{potencia(yytext);}
-	YY_BREAK
-case 3:
-YY_RULE_SETUP
-#line 25 "ejercicio2.l"
-{raiz(yytext);}
-	YY_BREAK
-case 4:
-YY_RULE_SETUP
-#line 26 "ejercicio2.l"
-{funcion(yytext,'l');}
-	YY_BREAK
-case 5:
-YY_RULE_SETUP
-#line 27 "ejercicio2.l"
-{funcion(yytext,'c');}
-	YY_BREAK
-case 6:
-YY_RULE_SETUP
-#line 28 "ejercicio2.l"
-{funcion(yytext,'s');}
-	YY_BREAK
-case 7:
-YY_RULE_SETUP
-#line 29 "ejercicio2.l"
-{funcion(yytext,'t');}
-	YY_BREAK
-case 8:
-YY_RULE_SETUP
-#line 30 "ejercicio2.l"
+#line 30 "proyectolex.l"
 {producto(yytext);}
 	YY_BREAK
-/*[^ \t\n]+   { np++; nc += yyleng; }*/
-/*[ \t]+      { nc += yyleng; }*/
-/*\n          { nl++; nc++; }*/
+/*Potencia*/
+case 3:
+YY_RULE_SETUP
+#line 32 "proyectolex.l"
+{potencia(yytext);}
+	YY_BREAK
+/*Raíz*/
+case 4:
+YY_RULE_SETUP
+#line 34 "proyectolex.l"
+{raiz(yytext);}
+	YY_BREAK
+/*Logaritmo*/
+case 5:
+YY_RULE_SETUP
+#line 36 "proyectolex.l"
+{funcion(yytext,'l');}
+	YY_BREAK
+/*Coseno*/
+case 6:
+YY_RULE_SETUP
+#line 38 "proyectolex.l"
+{funcion(yytext,'c');}
+	YY_BREAK
+/*Seno*/
+case 7:
+YY_RULE_SETUP
+#line 40 "proyectolex.l"
+{funcion(yytext,'s');}
+	YY_BREAK
+/*Tangente*/
+case 8:
+YY_RULE_SETUP
+#line 42 "proyectolex.l"
+{funcion(yytext,'t');}
+	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 36 "ejercicio2.l"
+#line 45 "proyectolex.l"
 ECHO;
 	YY_BREAK
-#line 855 "lex.yy.c"
+#line 867 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1144,7 +1156,7 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 75 )
+			if ( yy_current_state >= 74 )
 				yy_c = yy_meta[(unsigned int) yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
@@ -1172,11 +1184,11 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 75 )
+		if ( yy_current_state >= 74 )
 			yy_c = yy_meta[(unsigned int) yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
-	yy_is_jam = (yy_current_state == 74);
+	yy_is_jam = (yy_current_state == 73);
 
 		return yy_is_jam ? 0 : yy_current_state;
 }
@@ -1852,176 +1864,149 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 36 "ejercicio2.l"
+#line 45 "proyectolex.l"
 
 
+
+      /*----- Sección de Procedimientos --------*/
 
 int main (int argc, char *argv[]) {
+   if (argc == 2) {
+      yyin = fopen (argv[1], "rt");
 
-  if (argc == 2) {
-    yyin = fopen (argv[1], "rt");
+      if (yyin == NULL) {
+         cout<<"El fichero"<< argv[1] <<" no se puede abrir"<<endl;
+         exit (-1);
+      }
+   }else
+      yyin = stdin;
 
-    if (yyin == NULL) {
-      printf ("El fichero %s no se puede abrir\n", argv[1]);
-      exit (-1);
-    }
-  }else
-    yyin = stdin;
-
-    nc = np = nl = 0;
-    yylex ();
-    //escribir_datos(correos,np,nl);
-    return 0;
+   yylex ();
+   return 0;
 }
 
-void escribir_datos (char * etiqueta, char* texto) {
-  if(texto[strlen(texto)-1] == '.' ||texto[strlen(texto)-1] == ','||texto[strlen(texto)-1] == ';')
-    texto[strlen(texto)-1] = '\0';
 
-  printf ("%s: %s\n",etiqueta,texto);
-}
-
-// Suma de polinomios sencillos
-void suma(char * texto){
+//Suma de polinomios sencillos
+void suma(string texto){
 	double suma = 0;
-	char * dig;
+	string dig;
+   size_t pos_ant = 0, pos;
+   size_t it = 0;
 
-   printf("%s = ",texto);
+   cout<<texto<<" = ";
 
-   int i=0;
-   int j=0;
-   double signo[strlen(texto)];
-   signo[0] = (texto[0]=='-')?-1:1;
+   vector<string> elemento;
 
-
-   char operador [strlen(texto)];
-
-   for(i=1; i < strlen(texto);i++){
-     switch(texto[i]) {
-       case '+': signo[j+1]= 1;
-                 operador[j] = texto[i];
-                 j++;
-          break;
-       case '-': signo[j+1]= -1;
-                 operador[j] = texto[i];
-                 j++;
-          break;
-    };
-
+   // Eliminamos los espacios, si los hay
+   while (it != string::npos){
+      it = texto.find_first_of(" ");
+      if (it<string::npos)
+         texto.erase(it,1);
    }
 
-   j = 0;
-   char * aux = malloc(sizeof(char)*2);
-   aux[0] = operador[j];
-   aux[1] = '\0';
+   // Extraemos las operaciones
+   while (pos_ant < texto.size()){
+      pos = texto.find_first_of("+-",pos_ant+1);
+      dig = texto.substr(pos_ant,pos-pos_ant);
+      elemento.push_back(dig);
+      pos_ant=pos;
+   }
 
-   dig = strtok(texto, aux);
-   while (dig != NULL){
-        suma += atof(dig)*signo[j];
-        j++;
-        aux[0]= operador[j];
-        dig = strtok (NULL, aux);
-    }
+   // Realizamos el cálculo
+   for (int i =0; i< elemento.size(); i++)
+      suma += stod(elemento[i]);
 
-	printf("%.2f",suma);
+   // Imprimimos la suma total
+	cout<<suma;
+}
+
+void producto(string texto){
+   double operacion = 0;
+	string dig;
+   size_t pos_ant = 0, pos;
+   size_t it = 0;
+
+   cout<<texto<<" = ";
+
+   vector<string> elemento;
+
+   // Eliminamos los espacios, si los hay
+   while (it != string::npos){
+      it = texto.find_first_of(" ");
+      if (it<string::npos)
+         texto.erase(it,1);
+   }
+
+   // Extraemos las operaciones
+   while (pos_ant < texto.size()){
+      pos = texto.find_first_of("*/",pos_ant+1);
+      dig = texto.substr(pos_ant,pos-pos_ant);
+      elemento.push_back(dig);
+      pos_ant=pos;
+   }
+
+   // Realizamos el cálculo
+   operacion = stod(elemento[0]);
+   for (int i = 1; i< elemento.size(); i++){
+      if (elemento[i].at(0)=='*')
+         operacion *= stod(elemento[i].substr(1,elemento[i].size()-1));
+      if (elemento[i].at(0)=='/')
+         operacion /= stod(elemento[i].substr(1,elemento[i].size()-1));
+   }
+
+   // Imprimimos la suma total
+	cout<<operacion;
 }
 
 void potencia(char * texto){
-	double suma = 0;
-  double base,exponente;
+   double suma = 0;
+   double base,exponente;
 	char * dig;
 
-  printf("%s = ",texto);
+   cout<<texto<<" = ";
 
-  dig = strtok(texto, "^");
-  base = atof(dig)*1.0;
-  dig = strtok(NULL, "^");
-  exponente = atof(dig)*1.0;
+   dig = strtok(texto, "^");
+   base = atof(dig)*1.0;
+   dig = strtok(NULL, "^");
+   exponente = atof(dig)*1.0;
 
-  suma = pow(base,exponente);
+   suma = pow(base,exponente);
 
-	printf("%.2f",suma);
+	cout<<suma;
 }
 
 void raiz(char * texto){
 	double suma = 0;
 	char * dig;
 
-  printf("%s = ",texto);
+   cout<<texto<<" = ";
 
-// sqrt( = 5 caracteres, por lo que size() - 5 + 1 (ultimo parentesis)  = nº de numeros
-  strncpy( dig, texto+5,strlen(texto)-6);
-  suma = sqrt(atof(dig)*1.0);
+   // sqrt( = 5 caracteres, por lo que size() - 5 + 1 (ultimo parentesis)  = nº de numeros
+   strncpy( dig, texto+5,strlen(texto)-6);
+   suma = sqrt(atof(dig)*1.0);
 
-	printf("%f",suma);
+	cout<<suma;
 }
 
 
 void funcion(char *texto,char fun){
 	double suma = 0;
 	char * dig;
-  double PI =  3.14159265;
-  double val = PI / 180.0;
-  dig[0] = '\0';
-  printf("%s = ",texto);
-
-// log( = 4 caracteres, por lo que size() - 4 + 1 (ultimo parentesis)  = nº de numeros
-  strncpy( dig, texto+4,strlen(texto));
-  dig[strlen(texto)-5]='\0';
-  switch (fun) {
-    case 'l':suma = log(atof(dig)*1.0); break;;
-    case 'c':suma = cos(atof(dig)*val); break;;
-    case 's':suma = sin(atof(dig)*val); break;;
-    case 't':suma = tan(atof(dig)*val); break;;
-  }
-	printf("%f",suma);
-
-}
-
-void producto(char * texto){
-	double suma = 1;
-	char * dig;
-
+   double PI =  3.14159265;
+   double val = PI / 180.0;
+   dig[0] = '\0';
    printf("%s = ",texto);
 
-   int i=0;
-   int j=0;
-   double signo[strlen(texto)];
-   signo[0] = (texto[0]=='-')?-1:1;
-
-
-   char operador [strlen(texto)];
-
-   for(i=1; i < strlen(texto);i++){
-     switch(texto[i]) {
-       case '*': signo[j+1]= 1;
-                 operador[j] = texto[i];
-                 j++;
-          break;
-       case '/': signo[j+1]= -1;
-                 operador[j] = texto[i];
-                 j++;
-          break;
-    };
-
+// log( = 4 caracteres, por lo que size() - 4 + 1 (ultimo parentesis)  = nº de numeros
+   strncpy( dig, texto+4,strlen(texto));
+   dig[strlen(texto)-5]='\0';
+   switch (fun) {
+      case 'l':suma = log(atof(dig)*1.0); break;;
+      case 'c':suma = cos(atof(dig)*val); break;;
+      case 's':suma = sin(atof(dig)*val); break;;
+      case 't':suma = tan(atof(dig)*val); break;;
    }
+	printf("%f",suma);
 
-   j = 0;
-   char * aux = malloc(sizeof(char)*2);
-   aux[0] = operador[j];
-   aux[1] = '\0';
-
-   dig = strtok(texto, aux);
-   while (dig != NULL){
-        if(signo[j]>0)
-          suma *= atof(dig);
-        if(signo[j]<0)
-          suma /= atof(dig);
-        j++;
-        aux[0]= operador[j];
-        dig = strtok (NULL, aux);
-    }
-
-	printf("%.2f",suma);
 }
 
