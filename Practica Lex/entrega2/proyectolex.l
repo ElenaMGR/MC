@@ -23,10 +23,10 @@ numero	{entero}|{real}
 suma (" "?("+"|"-")" "?({entero}|{real}))
 producto (" "?("*"|"/")" "?"-"?" "?({entero}|{real}))
 potencia " "?"^"" "?"-"?" "?{numero}
-log "log("{numero}")"
-cos "cos("{numero}")"
-sin ("sin"|"sen")"("{numero}")"
-tan "tan("{numero}")"
+log "log("" "?"-"?" "?{numero}" "?")"
+cos "cos("" "?"-"?" "?{numero}" "?")"
+sin ("sin"|"sen")"("" "?"-"?" "?{numero}" "?")"
+tan "tan("" "?"-"?" "?{numero}" "?")"
 %%
 
       /*----- Sección de Reglas ----------------*/
@@ -39,7 +39,7 @@ tan "tan("{numero}")"
       /*Raíz*/
 ("sqrt("{numero}")")                                  {raiz(yytext);}
 
-      /*Operaciones trigonométricas*/
+      /*Operaciones logaritminca y trigonométricas*/
 ({log}|{cos}|{sin}|{tan})                             {trig(yytext);}
 
 
@@ -135,9 +135,7 @@ void raiz(char * texto){
 void trig(string texto){
    double operacion = 0;
 	double dig;
-   size_t pos_ant = 0, pos, it = 0;
-   double PI =  3.14159265;
-   double val = PI / 180.0;
+   size_t it = 0;
 
    cout<<texto<<" = ";
 
@@ -155,11 +153,11 @@ void trig(string texto){
    if (texto.substr(0,3)=="log")
       operacion=log(dig*1.0);
    else if (texto.substr(0,3)=="cos")
-      operacion=cos(dig*val);
+      operacion=cos(dig);
    else if (texto.substr(0,3)=="sin" || texto.substr(0,3)=="sen")
-      operacion=sin(dig*val);
+      operacion=sin(dig);
    else if (texto.substr(0,3)=="tan")
-      operacion=tan(dig*val);
+      operacion=tan(dig);
 
    // Imprimimos la suma total
 	cout<<operacion;

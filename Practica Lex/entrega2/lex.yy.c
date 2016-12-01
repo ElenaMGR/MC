@@ -384,15 +384,17 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static yyconst flex_int16_t yy_accept[71] =
+static yyconst flex_int16_t yy_accept[87] =
     {   0,
         0,    0,    5,    4,    4,    4,    4,    4,    4,    4,
         0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
         0,    0,    0,    0,    0,    0,    1,    0,    1,    0,
         0,    0,    1,    0,    0,    0,    0,    0,    0,    0,
         0,    0,    0,    0,    0,    0,    0,    0,    1,    1,
-        1,    0,    0,    0,    0,    0,    3,    0,    0,    0,
-        0,    0,    0,    0,    0,    2,    0,    0,    0,    0
+        1,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+        0,    0,    0,    0,    0,    0,    3,    0,    0,    0,
+        0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+        0,    2,    0,    0,    0,    0
     } ;
 
 static yyconst YY_CHAR yy_ec[256] =
@@ -434,68 +436,82 @@ static yyconst YY_CHAR yy_meta[24] =
         1,    1,    1
     } ;
 
-static yyconst flex_uint16_t yy_base[72] =
+static yyconst flex_uint16_t yy_base[88] =
     {   0,
-        0,   18,  123,  124,    1,   40,  103,  102,    0,  108,
-      109,    0,   19,    2,   16,  108,   50,   95,  101,   97,
-       96,   92,   94,  109,   51,   28,   24,  100,   29,   34,
-       52,   53,   56,  106,  105,  104,   83,  102,   94,   93,
-       92,   91,   90,   89,   88,   87,   92,   83,   81,   65,
-       60,   61,   64,   69,   57,   72,  124,   46,   33,   23,
-       77,    9,   74,   79,   82,  124,    5,   84,   86,  124,
-        0
+        0,   18,  167,  168,    1,   40,  147,  146,    0,  152,
+      153,    0,   19,    2,   16,  152,   50,  139,  145,  141,
+      140,  136,  138,  153,   51,   28,   24,  144,   29,   34,
+       52,   53,   56,  150,  149,  148,  127,  146,  138,  137,
+      136,  135,  134,   63,   65,   67,  140,   69,  132,  130,
+      129,   76,   78,   87,   80,   82,   96,   92,   83,  105,
+      128,  101,  108,  117,  124,  110,  168,  102,   95,   97,
+       86,   71,   64,   46,  112,   33,   29,    9,  122,  126,
+      127,  168,    5,  131,  113,  168,    0
     } ;
 
-static yyconst flex_int16_t yy_def[72] =
+static yyconst flex_int16_t yy_def[88] =
     {   0,
-       71,   71,   70,   70,   70,   70,   70,   70,   70,   70,
-       70,    6,    6,   70,   70,   70,   70,   70,   70,   70,
-       70,   70,   70,   13,   70,   70,   13,   70,   13,   13,
-       70,   70,   13,   70,   70,   70,   70,   70,   70,   70,
-       70,   70,   70,   70,   70,   70,   70,   70,   13,   13,
-       13,   70,   70,   70,   70,   70,   70,   70,   70,   70,
-       70,   70,   70,   70,   70,   70,   70,   70,   70,    0,
-       70
+       87,   87,   86,   86,   86,   86,   86,   86,   86,   86,
+       86,    6,    6,   86,   86,   86,   86,   86,   86,   86,
+       86,   86,   86,   13,   86,   86,   13,   86,   13,   13,
+       86,   86,   13,   86,   86,   86,   86,   86,   86,   86,
+       86,   86,   86,   86,   86,   86,   86,   86,   13,   13,
+       13,   86,   86,   86,   86,   86,   86,   86,   86,   86,
+       86,   86,   86,   86,   86,   86,   86,   86,   86,   86,
+       86,   86,   86,   86,   86,   86,   86,   86,   86,   86,
+       86,   86,   86,   86,   86,    0,   86
     } ;
 
-static yyconst flex_uint16_t yy_nxt[148] =
+static yyconst flex_uint16_t yy_nxt[192] =
     {   0,
-        4,   70,   11,   25,   70,    5,    5,   70,   26,    6,
-       12,   27,    7,   20,   69,   21,    8,   28,   68,   22,
-       24,    9,   10,    5,    5,   29,   70,    6,   70,   39,
-        7,   40,   65,   27,    8,   13,   41,   27,   29,    9,
+        4,   86,   11,   25,   86,    5,    5,   86,   26,    6,
+       12,   27,    7,   20,   85,   21,    8,   28,   84,   22,
+       24,    9,   10,    5,    5,   29,   86,    6,   86,   39,
+        7,   40,   67,   27,    8,   13,   41,   27,   29,    9,
        10,   13,   64,   30,   14,   15,   15,   16,   14,   12,
-       17,   31,   39,   42,   42,   63,   32,   26,   32,   33,
-       27,   33,   33,   43,   57,   33,   61,   57,   58,   51,
-       52,   59,   57,   53,   50,   57,   60,   57,   54,   62,
-       66,   56,   57,   63,   67,   57,   61,   57,   64,   66,
-       49,   65,   56,   68,   55,   69,   54,   53,   52,   51,
+       17,   31,   39,   42,   42,   81,   32,   26,   32,   33,
+       27,   33,   33,   43,   52,   33,   55,   67,   58,   53,
+       62,   56,   54,   59,   57,   63,   60,   65,   64,   65,
+       60,   69,   53,   69,   72,   54,   56,   54,   66,   57,
+       67,   57,   60,   72,   68,   80,   54,   70,   59,   67,
 
-       33,   50,   49,   27,   48,   47,   46,   45,   44,   29,
-       70,   38,   37,   36,   36,   35,   34,   30,   12,   23,
-       19,   18,   70,    3,   70,   70,   70,   70,   70,   70,
-       70,   70,   70,   70,   70,   70,   70,   70,   70,   70,
-       70,   70,   70,   70,   70,   70,   70
+       67,   60,   76,   71,   57,   57,   73,   63,   67,   76,
+       64,   79,   74,   67,   60,   82,   82,   64,   77,   83,
+       67,   75,   85,   66,   78,   67,   64,   70,   73,   67,
+       67,   79,   77,   54,   67,   80,   81,   75,   51,   50,
+       84,   49,   61,   51,   33,   50,   49,   27,   48,   47,
+       46,   45,   44,   29,   86,   38,   37,   36,   36,   35,
+       34,   30,   12,   23,   19,   18,   86,    3,   86,   86,
+       86,   86,   86,   86,   86,   86,   86,   86,   86,   86,
+       86,   86,   86,   86,   86,   86,   86,   86,   86,   86,
+       86
+
     } ;
 
-static yyconst flex_int16_t yy_chk[148] =
+static yyconst flex_int16_t yy_chk[192] =
     {   0,
-       71,    0,    5,   14,    0,    1,    1,    0,   14,    1,
-        5,   14,    1,    9,   67,    9,    1,   15,   62,    9,
+       87,    0,    5,   14,    0,    1,    1,    0,   14,    1,
+        5,   14,    1,    9,   83,    9,    1,   15,   78,    9,
        13,    1,    1,    2,    2,   15,   13,    2,   13,   26,
-        2,   27,   60,   27,    2,   30,   29,   26,   29,    2,
-        2,    6,   59,   30,    6,    6,    6,    6,    6,    6,
-        6,   17,   25,   31,   32,   58,   17,   25,   31,   17,
-       25,   31,   32,   33,   52,   33,   55,   53,   52,   51,
-       52,   53,   54,   53,   50,   56,   54,   63,   54,   56,
-       61,   56,   64,   63,   61,   65,   61,   68,   64,   69,
-       49,   65,   48,   68,   47,   69,   46,   45,   44,   43,
+        2,   27,   77,   27,    2,   30,   29,   26,   29,    2,
+        2,    6,   76,   30,    6,    6,    6,    6,    6,    6,
+        6,   17,   25,   31,   32,   74,   17,   25,   31,   17,
+       25,   31,   32,   33,   44,   33,   45,   73,   46,   44,
+       48,   45,   44,   46,   45,   48,   46,   52,   48,   53,
+       72,   55,   52,   56,   59,   52,   55,   53,   54,   55,
+       54,   56,   59,   58,   54,   71,   54,   57,   58,   57,
 
-       42,   41,   40,   39,   38,   37,   36,   35,   34,   28,
-       24,   23,   22,   21,   20,   19,   18,   16,   11,   10,
-        8,    7,    3,   70,   70,   70,   70,   70,   70,   70,
-       70,   70,   70,   70,   70,   70,   70,   70,   70,   70,
-       70,   70,   70,   70,   70,   70,   70
+       70,   58,   62,   57,   69,   57,   60,   62,   60,   63,
+       62,   68,   60,   66,   60,   75,   85,   63,   64,   75,
+       64,   75,   85,   79,   64,   79,   64,   80,   81,   80,
+       81,   79,   84,   65,   84,   80,   81,   61,   51,   50,
+       84,   49,   47,   43,   42,   41,   40,   39,   38,   37,
+       36,   35,   34,   28,   24,   23,   22,   21,   20,   19,
+       18,   16,   11,   10,    8,    7,    3,   86,   86,   86,
+       86,   86,   86,   86,   86,   86,   86,   86,   86,   86,
+       86,   86,   86,   86,   86,   86,   86,   86,   86,   86,
+       86
+
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -529,7 +545,7 @@ void raiz(char * texto);
 void trig(string texto);
 void opBinaria(string texto);
 /*----- Alias ----------------*/
-#line 533 "lex.yy.c"
+#line 549 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -755,7 +771,7 @@ YY_DECL
       /*Suma y resta*/
       /*Multiplicación y división*/
       /*Potencia*/
-#line 759 "lex.yy.c"
+#line 775 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -782,13 +798,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 71 )
+				if ( yy_current_state >= 87 )
 					yy_c = yy_meta[(unsigned int) yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 124 );
+		while ( yy_base[yy_current_state] != 168 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -823,7 +839,7 @@ YY_RULE_SETUP
 #line 40 "proyectolex.l"
 {raiz(yytext);}
 	YY_BREAK
-/*Operaciones trigonométricas*/
+/*Operaciones logaritminca y trigonométricas*/
 case 3:
 YY_RULE_SETUP
 #line 43 "proyectolex.l"
@@ -834,7 +850,7 @@ YY_RULE_SETUP
 #line 46 "proyectolex.l"
 ECHO;
 	YY_BREAK
-#line 838 "lex.yy.c"
+#line 854 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1127,7 +1143,7 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 71 )
+			if ( yy_current_state >= 87 )
 				yy_c = yy_meta[(unsigned int) yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
@@ -1155,11 +1171,11 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 71 )
+		if ( yy_current_state >= 87 )
 			yy_c = yy_meta[(unsigned int) yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
-	yy_is_jam = (yy_current_state == 70);
+	yy_is_jam = (yy_current_state == 86);
 
 		return yy_is_jam ? 0 : yy_current_state;
 }
@@ -1929,9 +1945,7 @@ void raiz(char * texto){
 void trig(string texto){
    double operacion = 0;
 	double dig;
-   size_t pos_ant = 0, pos, it = 0;
-   double PI =  3.14159265;
-   double val = PI / 180.0;
+   size_t it = 0;
 
    cout<<texto<<" = ";
 
@@ -1949,11 +1963,11 @@ void trig(string texto){
    if (texto.substr(0,3)=="log")
       operacion=log(dig*1.0);
    else if (texto.substr(0,3)=="cos")
-      operacion=cos(dig*val);
+      operacion=cos(dig);
    else if (texto.substr(0,3)=="sin" || texto.substr(0,3)=="sen")
-      operacion=sin(dig*val);
+      operacion=sin(dig);
    else if (texto.substr(0,3)=="tan")
-      operacion=tan(dig*val);
+      operacion=tan(dig);
 
    // Imprimimos la suma total
 	cout<<operacion;
