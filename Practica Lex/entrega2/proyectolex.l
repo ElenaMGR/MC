@@ -11,7 +11,7 @@ void suma(string texto);
 void producto(string texto);
 void potencia(char * texto);
 void raiz(char * texto);
-void opUnaria(char *texto,char fun);
+void trig(string texto);
 void opBinaria(string texto);
 %}
 
@@ -21,32 +21,26 @@ entero	{digito}+
 real	{entero}"."{entero}
 numero	{entero}|{real}
 suma (" "?("+"|"-")" "?({entero}|{real}))
-producto (" "?("*"|"/")" "?({entero}|{real}))
+producto (" "?("*"|"/")" "?"-"?" "?({entero}|{real}))
+potencia " "?"^"" "?"-"?" "?{numero}
+log "log("{numero}")"
+cos "cos("{numero}")"
+sin ("sin"|"sen")"("{numero}")"
+tan "tan("{numero}")"
 %%
 
       /*----- Sección de Reglas ----------------*/
 
       /*Suma y resta*/
       /*Multiplicación y división*/
-(("+"|"-")" "?)?{numero}" "?({suma}|{producto})+      {opBinaria(yytext);}
-
       /*Potencia*/
-{numero}" "?"^"" "?{numero}                           {potencia(yytext);}
+(("+"|"-")" "?)?{numero}" "?({suma}|{producto}|{potencia})+      {opBinaria(yytext);}
 
       /*Raíz*/
-"sqrt("{numero}")"                                    {raiz(yytext);}
+("sqrt("{numero}")")                                  {raiz(yytext);}
 
-      /*Logaritmo*/
-"log("{numero}")"                                     {opUnaria(yytext,'l');}
-
-      /*Coseno*/
-"cos("{numero}")"                                     {opUnaria(yytext,'c');}
-
-      /*Seno*/
-("sin"|"sen")"("{numero}")"                           {opUnaria(yytext,'s');}
-
-      /*Tangente*/
-"tan("{numero}")"                                     {opUnaria(yytext,'t');}
+      /*Operaciones trigonométricas*/
+({log}|{cos}|{sin}|{tan})                             {trig(yytext);}
 
 
 %%
@@ -65,14 +59,17 @@ int main (int argc, char *argv[]) {
       yyin = stdin;
 
    yylex ();
+
    return 0;
 }
 
 // Operaciones binarias suma, resta, multiplicación y división
 void opBinaria(string texto){
    double operacion = 0;
+   double base,exponente;
 	string dig;
    size_t pos_ant = 0, pos;
+   //int pos_ant = 0, pos;
    size_t it = 0;
 
    cout<<texto<<" = ";
@@ -88,7 +85,10 @@ void opBinaria(string texto){
 
    // Extraemos las operaciones
    while (pos_ant < texto.size()){
-      pos = texto.find_first_of("*/+-",pos_ant+1);
+      if ((texto.at(pos_ant)=='*'||texto.at(pos_ant)=='/'||texto.at(pos_ant)=='^') && texto.at(pos_ant+1)=='-')
+         pos = texto.find_first_of("*/+-^",pos_ant+2);
+      else
+         pos = texto.find_first_of("*/+-^",pos_ant+1);
       dig = texto.substr(pos_ant,pos-pos_ant);
       elemento.push_back(dig);
       pos_ant=pos;
@@ -103,6 +103,11 @@ void opBinaria(string texto){
          operacion *= stod(elemento[i].substr(1,elemento[i].size()-1));
       if (elemento[i].at(0)=='/')
          operacion /= stod(elemento[i].substr(1,elemento[i].size()-1));
+      if (elemento[i].at(0)=='^'){
+         base = operacion;
+         exponente = stod(elemento[i].substr(1,elemento[i].size()-1));
+         operacion = pow(base,exponente);
+      }
    }
 
    // Imprimimos la suma total
@@ -110,7 +115,7 @@ void opBinaria(string texto){
 }
 
 // Potencia
-void potencia(char * texto){
+/*void potencia(char * texto){
    double suma = 0;
    double base,exponente;
 	char * dig;
@@ -127,7 +132,7 @@ void potencia(char * texto){
    suma = pow(base,exponente);
 
 	cout<<suma;
-}
+}*/
 
 // Raíz cuadrada
 void raiz(char * texto){
@@ -144,25 +149,38 @@ void raiz(char * texto){
 	cout<<suma;
 }
 
-// Operaciones unarias log, tan, sen, cos
-void opUnaria(char *texto,char fun){
-	double suma = 0;
-	char * dig;
+
+// Operaciones trigonométricas log, tan, sen, cos
+void trig(string texto){
+   double operacion = 0;
+	double dig;
+   size_t pos_ant = 0, pos, it = 0;
    double PI =  3.14159265;
    double val = PI / 180.0;
-   dig[0] = '\0';
-   printf("%s = ",texto);
 
-   // Copio en dig el número al que quiero hacerle la operación, quitando "log(),cos(),sin(),tan()"
-   strncpy( dig, texto+4,strlen(texto));
+   cout<<texto<<" = ";
 
-   // Hago el cálculo
-   switch (fun) {
-      case 'l':suma = log(atof(dig)*1.0); break;;
-      case 'c':suma = cos(atof(dig)*val); break;;
-      case 's':suma = sin(atof(dig)*val); break;;
-      case 't':suma = tan(atof(dig)*val); break;;
+   // Eliminamos los espacios, si los hay
+   while (it != string::npos){
+      it = texto.find_first_of(" ");
+      if (it<string::npos)
+         texto.erase(it,1);
    }
-	printf("%f",suma);
+
+   //Obtenemos el número
+   dig = stod(texto.substr(4,texto.size()-5));
+
+   // Realizamos el cálculo
+   if (texto.substr(0,3)=="log")
+      operacion=log(dig*1.0);
+   else if (texto.substr(0,3)=="cos")
+      operacion=cos(dig*val);
+   else if (texto.substr(0,3)=="sin" || texto.substr(0,3)=="sen")
+      operacion=sin(dig*val);
+   else if (texto.substr(0,3)=="tan")
+      operacion=tan(dig*val);
+
+   // Imprimimos la suma total
+	cout<<operacion;
 
 }

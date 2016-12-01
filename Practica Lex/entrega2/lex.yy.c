@@ -375,8 +375,8 @@ static void yy_fatal_error (yyconst char msg[]  );
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
 
-#define YY_NUM_RULES 8
-#define YY_END_OF_BUFFER 9
+#define YY_NUM_RULES 4
+#define YY_END_OF_BUFFER 5
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -384,16 +384,15 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static yyconst flex_int16_t yy_accept[74] =
+static yyconst flex_int16_t yy_accept[71] =
     {   0,
-        0,    0,    9,    8,    8,    8,    8,    8,    8,    8,
+        0,    0,    5,    4,    4,    4,    4,    4,    4,    4,
         0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-        0,    0,    0,    0,    0,    0,    0,    0,    1,    0,
-        1,    0,    0,    2,    0,    0,    0,    0,    0,    0,
+        0,    0,    0,    0,    0,    0,    1,    0,    1,    0,
+        0,    0,    1,    0,    0,    0,    0,    0,    0,    0,
         0,    0,    0,    0,    0,    0,    0,    0,    1,    1,
-        2,    0,    0,    0,    0,    0,    5,    0,    4,    0,
-        6,    0,    0,    7,    0,    0,    0,    0,    3,    0,
-        0,    0,    0
+        1,    0,    0,    0,    0,    0,    3,    0,    0,    0,
+        0,    0,    0,    0,    0,    2,    0,    0,    0,    0
     } ;
 
 static yyconst YY_CHAR yy_ec[256] =
@@ -435,68 +434,68 @@ static yyconst YY_CHAR yy_meta[24] =
         1,    1,    1
     } ;
 
-static yyconst flex_uint16_t yy_base[75] =
+static yyconst flex_uint16_t yy_base[72] =
     {   0,
-        0,   18,  122,  123,    1,   40,  102,  101,    0,  107,
-      108,   50,   19,    2,   16,  107,    0,   28,   94,  100,
-       96,   95,   91,   93,   99,   99,  106,   97,   24,   96,
-       29,   34,   95,   53,  101,  100,   99,   78,   97,   52,
-       89,   88,   87,   86,   85,   84,   90,   82,   80,   77,
-       64,   60,   61,   68,   57,   69,  123,   56,  123,   43,
-      123,   33,   76,  123,   23,    5,   71,   78,  123,    9,
-       79,   81,  123,    0
+        0,   18,  123,  124,    1,   40,  103,  102,    0,  108,
+      109,    0,   19,    2,   16,  108,   50,   95,  101,   97,
+       96,   92,   94,  109,   51,   28,   24,  100,   29,   34,
+       52,   53,   56,  106,  105,  104,   83,  102,   94,   93,
+       92,   91,   90,   89,   88,   87,   92,   83,   81,   65,
+       60,   61,   64,   69,   57,   72,  124,   46,   33,   23,
+       77,    9,   74,   79,   82,  124,    5,   84,   86,  124,
+        0
     } ;
 
-static yyconst flex_int16_t yy_def[75] =
+static yyconst flex_int16_t yy_def[72] =
     {   0,
-       74,   74,   73,   73,   73,   73,   73,   73,   73,   73,
-       73,   73,    6,   73,   73,   73,    6,   73,   73,   73,
-       73,   73,   73,   73,   13,   73,   25,   73,   25,   73,
-       25,   13,   73,   73,   73,   73,   73,   73,   73,   25,
-       73,   73,   73,   73,   73,   73,   73,   73,   25,   25,
-       73,   73,   73,   73,   73,   73,   73,   73,   73,   73,
-       73,   73,   73,   73,   73,   73,   73,   73,   73,   73,
-       73,   73,    0,   73
+       71,   71,   70,   70,   70,   70,   70,   70,   70,   70,
+       70,    6,    6,   70,   70,   70,   70,   70,   70,   70,
+       70,   70,   70,   13,   70,   70,   13,   70,   13,   13,
+       70,   70,   13,   70,   70,   70,   70,   70,   70,   70,
+       70,   70,   70,   70,   70,   70,   70,   70,   13,   13,
+       13,   70,   70,   70,   70,   70,   70,   70,   70,   70,
+       70,   70,   70,   70,   70,   70,   70,   70,   70,    0,
+       70
     } ;
 
-static yyconst flex_uint16_t yy_nxt[147] =
+static yyconst flex_uint16_t yy_nxt[148] =
     {   0,
-        4,   73,   11,   28,   73,    5,    5,   73,   57,    6,
-       12,   29,    7,   21,   66,   22,    8,   30,   72,   23,
-       27,    9,   10,    5,    5,   31,   73,    6,   73,   33,
-        7,   41,   71,   29,    8,   13,   42,   34,   31,    9,
-       10,   13,   68,   32,   14,   15,   15,   16,   14,   17,
-       18,   25,   67,   25,   14,   15,   15,   26,   14,   12,
-       43,   40,   34,   57,   59,   66,   63,   58,   60,   52,
-       53,   61,   64,   51,   59,   62,   65,   54,   56,   69,
-       67,   61,   64,   70,   69,   63,   50,   68,   71,   49,
-       72,   56,   55,   54,   53,   52,   51,   50,   49,   48,
+        4,   70,   11,   25,   70,    5,    5,   70,   26,    6,
+       12,   27,    7,   20,   69,   21,    8,   28,   68,   22,
+       24,    9,   10,    5,    5,   29,   70,    6,   70,   39,
+        7,   40,   65,   27,    8,   13,   41,   27,   29,    9,
+       10,   13,   64,   30,   14,   15,   15,   16,   14,   12,
+       17,   31,   39,   42,   42,   63,   32,   26,   32,   33,
+       27,   33,   33,   43,   57,   33,   61,   57,   58,   51,
+       52,   59,   57,   53,   50,   57,   60,   57,   54,   62,
+       66,   56,   57,   63,   67,   57,   61,   57,   64,   66,
+       49,   65,   56,   68,   55,   69,   54,   53,   52,   51,
 
-       47,   46,   45,   44,   34,   31,   29,   73,   40,   73,
-       39,   38,   37,   37,   36,   35,   32,   12,   24,   20,
-       19,   73,    3,   73,   73,   73,   73,   73,   73,   73,
-       73,   73,   73,   73,   73,   73,   73,   73,   73,   73,
-       73,   73,   73,   73,   73,   73
+       33,   50,   49,   27,   48,   47,   46,   45,   44,   29,
+       70,   38,   37,   36,   36,   35,   34,   30,   12,   23,
+       19,   18,   70,    3,   70,   70,   70,   70,   70,   70,
+       70,   70,   70,   70,   70,   70,   70,   70,   70,   70,
+       70,   70,   70,   70,   70,   70,   70
     } ;
 
-static yyconst flex_int16_t yy_chk[147] =
+static yyconst flex_int16_t yy_chk[148] =
     {   0,
-       74,    0,    5,   14,    0,    1,    1,    0,   66,    1,
-        5,   14,    1,    9,   66,    9,    1,   15,   70,    9,
-       13,    1,    1,    2,    2,   15,   13,    2,   13,   18,
-        2,   29,   65,   29,    2,   32,   31,   18,   31,    2,
-        2,    6,   62,   32,    6,    6,    6,    6,    6,    6,
-        6,   12,   60,   40,   12,   12,   12,   12,   12,   12,
-       34,   40,   34,   52,   53,   58,   55,   52,   53,   52,
-       53,   54,   56,   51,   67,   54,   56,   54,   56,   63,
-       67,   68,   71,   63,   72,   63,   50,   68,   71,   49,
-       72,   48,   47,   46,   45,   44,   43,   42,   41,   39,
+       71,    0,    5,   14,    0,    1,    1,    0,   14,    1,
+        5,   14,    1,    9,   67,    9,    1,   15,   62,    9,
+       13,    1,    1,    2,    2,   15,   13,    2,   13,   26,
+        2,   27,   60,   27,    2,   30,   29,   26,   29,    2,
+        2,    6,   59,   30,    6,    6,    6,    6,    6,    6,
+        6,   17,   25,   31,   32,   58,   17,   25,   31,   17,
+       25,   31,   32,   33,   52,   33,   55,   53,   52,   51,
+       52,   53,   54,   53,   50,   56,   54,   63,   54,   56,
+       61,   56,   64,   63,   61,   65,   61,   68,   64,   69,
+       49,   65,   48,   68,   47,   69,   46,   45,   44,   43,
 
-       38,   37,   36,   35,   33,   30,   28,   27,   26,   25,
-       24,   23,   22,   21,   20,   19,   16,   11,   10,    8,
-        7,    3,   73,   73,   73,   73,   73,   73,   73,   73,
-       73,   73,   73,   73,   73,   73,   73,   73,   73,   73,
-       73,   73,   73,   73,   73,   73
+       42,   41,   40,   39,   38,   37,   36,   35,   34,   28,
+       24,   23,   22,   21,   20,   19,   18,   16,   11,   10,
+        8,    7,    3,   70,   70,   70,   70,   70,   70,   70,
+       70,   70,   70,   70,   70,   70,   70,   70,   70,   70,
+       70,   70,   70,   70,   70,   70,   70
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -527,10 +526,10 @@ void suma(string texto);
 void producto(string texto);
 void potencia(char * texto);
 void raiz(char * texto);
-void opUnaria(char *texto,char fun);
+void trig(string texto);
 void opBinaria(string texto);
 /*----- Alias ----------------*/
-#line 534 "lex.yy.c"
+#line 533 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -748,13 +747,14 @@ YY_DECL
 		}
 
 	{
-#line 25 "proyectolex.l"
+#line 30 "proyectolex.l"
 
 
       /*----- Sección de Reglas ----------------*/
 
       /*Suma y resta*/
       /*Multiplicación y división*/
+      /*Potencia*/
 #line 759 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
@@ -782,13 +782,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 74 )
+				if ( yy_current_state >= 71 )
 					yy_c = yy_meta[(unsigned int) yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 123 );
+		while ( yy_base[yy_current_state] != 124 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -814,51 +814,27 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 31 "proyectolex.l"
+#line 37 "proyectolex.l"
 {opBinaria(yytext);}
 	YY_BREAK
-/*Potencia*/
+/*Raíz*/
 case 2:
 YY_RULE_SETUP
-#line 34 "proyectolex.l"
-{potencia(yytext);}
-	YY_BREAK
-/*Raíz*/
-case 3:
-YY_RULE_SETUP
-#line 37 "proyectolex.l"
+#line 40 "proyectolex.l"
 {raiz(yytext);}
 	YY_BREAK
-/*Logaritmo*/
-case 4:
-YY_RULE_SETUP
-#line 40 "proyectolex.l"
-{opUnaria(yytext,'l');}
-	YY_BREAK
-/*Coseno*/
-case 5:
+/*Operaciones trigonométricas*/
+case 3:
 YY_RULE_SETUP
 #line 43 "proyectolex.l"
-{opUnaria(yytext,'c');}
+{trig(yytext);}
 	YY_BREAK
-/*Seno*/
-case 6:
+case 4:
 YY_RULE_SETUP
 #line 46 "proyectolex.l"
-{opUnaria(yytext,'s');}
-	YY_BREAK
-/*Tangente*/
-case 7:
-YY_RULE_SETUP
-#line 49 "proyectolex.l"
-{opUnaria(yytext,'t');}
-	YY_BREAK
-case 8:
-YY_RULE_SETUP
-#line 52 "proyectolex.l"
 ECHO;
 	YY_BREAK
-#line 862 "lex.yy.c"
+#line 838 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1151,7 +1127,7 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 74 )
+			if ( yy_current_state >= 71 )
 				yy_c = yy_meta[(unsigned int) yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
@@ -1179,11 +1155,11 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 74 )
+		if ( yy_current_state >= 71 )
 			yy_c = yy_meta[(unsigned int) yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
-	yy_is_jam = (yy_current_state == 73);
+	yy_is_jam = (yy_current_state == 70);
 
 		return yy_is_jam ? 0 : yy_current_state;
 }
@@ -1859,7 +1835,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 52 "proyectolex.l"
+#line 46 "proyectolex.l"
 
 
 
@@ -1877,14 +1853,17 @@ int main (int argc, char *argv[]) {
       yyin = stdin;
 
    yylex ();
+
    return 0;
 }
 
 // Operaciones binarias suma, resta, multiplicación y división
 void opBinaria(string texto){
    double operacion = 0;
+   double base,exponente;
 	string dig;
    size_t pos_ant = 0, pos;
+   //int pos_ant = 0, pos;
    size_t it = 0;
 
    cout<<texto<<" = ";
@@ -1900,7 +1879,10 @@ void opBinaria(string texto){
 
    // Extraemos las operaciones
    while (pos_ant < texto.size()){
-      pos = texto.find_first_of("*/+-",pos_ant+1);
+      if ((texto.at(pos_ant)=='*'||texto.at(pos_ant)=='/'||texto.at(pos_ant)=='^') && texto.at(pos_ant+1)=='-')
+         pos = texto.find_first_of("*/+-^",pos_ant+2);
+      else
+         pos = texto.find_first_of("*/+-^",pos_ant+1);
       dig = texto.substr(pos_ant,pos-pos_ant);
       elemento.push_back(dig);
       pos_ant=pos;
@@ -1915,6 +1897,11 @@ void opBinaria(string texto){
          operacion *= stod(elemento[i].substr(1,elemento[i].size()-1));
       if (elemento[i].at(0)=='/')
          operacion /= stod(elemento[i].substr(1,elemento[i].size()-1));
+      if (elemento[i].at(0)=='^'){
+         base = operacion;
+         exponente = stod(elemento[i].substr(1,elemento[i].size()-1));
+         operacion = pow(base,exponente);
+      }
    }
 
    // Imprimimos la suma total
@@ -1922,7 +1909,7 @@ void opBinaria(string texto){
 }
 
 // Potencia
-void potencia(char * texto){
+/*void potencia(char * texto){
    double suma = 0;
    double base,exponente;
 	char * dig;
@@ -1939,7 +1926,7 @@ void potencia(char * texto){
    suma = pow(base,exponente);
 
 	cout<<suma;
-}
+}*/
 
 // Raíz cuadrada
 void raiz(char * texto){
@@ -1956,26 +1943,39 @@ void raiz(char * texto){
 	cout<<suma;
 }
 
-// Operaciones unarias log, tan, sen, cos
-void opUnaria(char *texto,char fun){
-	double suma = 0;
-	char * dig;
+
+// Operaciones trigonométricas log, tan, sen, cos
+void trig(string texto){
+   double operacion = 0;
+	double dig;
+   size_t pos_ant = 0, pos, it = 0;
    double PI =  3.14159265;
    double val = PI / 180.0;
-   dig[0] = '\0';
-   printf("%s = ",texto);
 
-   // Copio en dig el número al que quiero hacerle la operación, quitando "log(),cos(),sin(),tan()"
-   strncpy( dig, texto+4,strlen(texto));
+   cout<<texto<<" = ";
 
-   // Hago el cálculo
-   switch (fun) {
-      case 'l':suma = log(atof(dig)*1.0); break;;
-      case 'c':suma = cos(atof(dig)*val); break;;
-      case 's':suma = sin(atof(dig)*val); break;;
-      case 't':suma = tan(atof(dig)*val); break;;
+   // Eliminamos los espacios, si los hay
+   while (it != string::npos){
+      it = texto.find_first_of(" ");
+      if (it<string::npos)
+         texto.erase(it,1);
    }
-	printf("%f",suma);
+
+   //Obtenemos el número
+   dig = stod(texto.substr(4,texto.size()-5));
+
+   // Realizamos el cálculo
+   if (texto.substr(0,3)=="log")
+      operacion=log(dig*1.0);
+   else if (texto.substr(0,3)=="cos")
+      operacion=cos(dig*val);
+   else if (texto.substr(0,3)=="sin" || texto.substr(0,3)=="sen")
+      operacion=sin(dig*val);
+   else if (texto.substr(0,3)=="tan")
+      operacion=tan(dig*val);
+
+   // Imprimimos la suma total
+	cout<<operacion;
 
 }
 
