@@ -43,18 +43,18 @@ muy complejo la detección de dichas cadenas.
 \section{Operaciones detectadas}
 Actualmente se ha detectado y solucionado las operaciones siguientes:
 \begin{enumerate}
-\item $a_0+a_1+...+a_n \mid \forall a \in \mathbb{R}$
-\item $a_0*a_1*...*a_n \mid \forall a \in \mathbb{R}$
-\item $a_0/a_1/.../a_n \mid \forall a \in \mathbb{R}$
-\item $ln(a) \mid \forall a \in \mathbb{R}$
-\item $\sqrt{a} \mid \forall a \in \mathbb{R}$
-\item $\cos(a) \mid \forall a \in \mathbb{R}$
-\item $\sin(a) \mid \forall a \in \mathbb{R}$
-\item $sen(a) \mid \forall a \in \mathbb{R}$
-\item $\tan(a) \mid \forall a \in \mathbb{R}$
+\item $a_0+a_1+...+a_n \mid \forall a_i \in \mathbb{R}$
+\item $a_0*a_1*...*a_n \mid \forall a_i \in \mathbb{R}$
+\item $a_0/a_1/.../a_n \mid \forall a_i \in \mathbb{R}$
+\item $a^b \mid a,b \in \mathbb{R}$
+\item $ln(a) \mid a \in \mathbb{R}$
+\item $\sqrt{a} \mid a \in \mathbb{R}^+$
+\item $\cos(a) \mid a \in \mathbb{R}$
+\item $\sin(a)$ o $sen(a) \mid a \in \mathbb{R}$
+\item $\tan(a) \mid a \in \mathbb{R}$
 \end{enumerate}
 
-Nota: $a$ tiene que ser un número. También puede calcular la mezcla de las operaciones 1, 2 y 3 a la vez.
+Nota: $a$ tiene que ser un número. También se puede calcular la mezcla de las operaciones 1, 2, 3 y 4 a la vez.
 \\
 Para una posible ampliación se añadirían más operaciones matemáticas con sus prioridades
 correspondientes.
