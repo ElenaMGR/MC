@@ -19,8 +19,7 @@ void opBinaria(string texto);
 digito	[0-9]
 entero	{digito}+
 real	{entero}"."{entero}
-real2	{real}[eE][\+\-]?{entero}
-numero	{entero}|{real}|{real2}
+numero	{entero}|{real}
 suma (" "?("+"|"-")" "?({entero}|{real}))
 producto (" "?("*"|"/")" "?({entero}|{real}))
 %%
@@ -29,25 +28,25 @@ producto (" "?("*"|"/")" "?({entero}|{real}))
 
       /*Suma y resta*/
       /*Multiplicación y división*/
-(("+"|"-")" "?)?({entero}|{real})" "?({suma}|{producto})+      {opBinaria(yytext);}
+(("+"|"-")" "?)?{numero}" "?({suma}|{producto})+      {opBinaria(yytext);}
 
       /*Potencia*/
-({entero}|{real})" "?"^"" "?({entero}|{real})                  {potencia(yytext);}
+{numero}" "?"^"" "?{numero}                           {potencia(yytext);}
 
       /*Raíz*/
-"sqrt("({entero}|{real})")"                                    {raiz(yytext);}
+"sqrt("{numero}")"                                    {raiz(yytext);}
 
       /*Logaritmo*/
-"log("({entero}|{real})")"                                     {opUnaria(yytext,'l');}
+"log("{numero}")"                                     {opUnaria(yytext,'l');}
 
       /*Coseno*/
-"cos("({entero}|{real})")"                                     {opUnaria(yytext,'c');}
+"cos("{numero}")"                                     {opUnaria(yytext,'c');}
 
       /*Seno*/
-("sin"|"sen")"("({entero}|{real})")"                           {opUnaria(yytext,'s');}
+("sin"|"sen")"("{numero}")"                           {opUnaria(yytext,'s');}
 
       /*Tangente*/
-"tan("({entero}|{real})")"                                     {opUnaria(yytext,'t');}
+"tan("{numero}")"                                     {opUnaria(yytext,'t');}
 
 
 %%

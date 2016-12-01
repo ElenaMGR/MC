@@ -748,7 +748,7 @@ YY_DECL
 		}
 
 	{
-#line 26 "proyectolex.l"
+#line 25 "proyectolex.l"
 
 
       /*----- Sección de Reglas ----------------*/
@@ -814,48 +814,48 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 32 "proyectolex.l"
+#line 31 "proyectolex.l"
 {opBinaria(yytext);}
 	YY_BREAK
 /*Potencia*/
 case 2:
 YY_RULE_SETUP
-#line 35 "proyectolex.l"
+#line 34 "proyectolex.l"
 {potencia(yytext);}
 	YY_BREAK
 /*Raíz*/
 case 3:
 YY_RULE_SETUP
-#line 38 "proyectolex.l"
+#line 37 "proyectolex.l"
 {raiz(yytext);}
 	YY_BREAK
 /*Logaritmo*/
 case 4:
 YY_RULE_SETUP
-#line 41 "proyectolex.l"
+#line 40 "proyectolex.l"
 {opUnaria(yytext,'l');}
 	YY_BREAK
 /*Coseno*/
 case 5:
 YY_RULE_SETUP
-#line 44 "proyectolex.l"
+#line 43 "proyectolex.l"
 {opUnaria(yytext,'c');}
 	YY_BREAK
 /*Seno*/
 case 6:
 YY_RULE_SETUP
-#line 47 "proyectolex.l"
+#line 46 "proyectolex.l"
 {opUnaria(yytext,'s');}
 	YY_BREAK
 /*Tangente*/
 case 7:
 YY_RULE_SETUP
-#line 50 "proyectolex.l"
+#line 49 "proyectolex.l"
 {opUnaria(yytext,'t');}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 53 "proyectolex.l"
+#line 52 "proyectolex.l"
 ECHO;
 	YY_BREAK
 #line 862 "lex.yy.c"
@@ -1859,7 +1859,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 53 "proyectolex.l"
+#line 52 "proyectolex.l"
 
 
 
@@ -1967,7 +1967,6 @@ void opUnaria(char *texto,char fun){
 
    // Copio en dig el número al que quiero hacerle la operación, quitando "log(),cos(),sin(),tan()"
    strncpy( dig, texto+4,strlen(texto));
-   //dig[strlen(texto)-5]='\0';
 
    // Hago el cálculo
    switch (fun) {
