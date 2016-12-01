@@ -114,25 +114,6 @@ void opBinaria(string texto){
 	cout<<operacion;
 }
 
-// Potencia
-/*void potencia(char * texto){
-   double suma = 0;
-   double base,exponente;
-	char * dig;
-
-   cout<<texto<<" = ";
-
-   // Divido el texto en base ^ exponente
-   dig = strtok(texto, "^");
-   base = atof(dig)*1.0;
-   dig = strtok(NULL, "^");
-   exponente = atof(dig)*1.0;
-
-   // Calculo la potencia
-   suma = pow(base,exponente);
-
-	cout<<suma;
-}*/
 
 // Raíz cuadrada
 void raiz(char * texto){
