@@ -41,7 +41,7 @@ Lex será imprescindible para la identificación de estas operaciones matemátic
 muy complejo la detección de dichas cadenas. 
 
 \section{Operaciones detectadas}
-Actualmente se ha detectado y solucionado las operaciones siguientes:
+Actualmente se han detectado y solucionado las operaciones siguientes:
 \begin{enumerate}
 \item $a_0+a_1+...+a_n \mid \forall a_i \in \mathbb{R}$
 \item $a_0*a_1*...*a_n \mid \forall a_i \in \mathbb{R}$

@@ -1,0 +1,234 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{enumerate}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[hidelinks]{hyperref}
+\usepackage[vmargin=2.3cm,hmargin=2.3cm]{geometry}
+\usepackage{sectsty}
+\sectionfont{\fontsize{12}{15}\selectfont}
+\usepackage{tikz}
+
+
+\title{MODELOS DE COMPUTACIÓN \\ Práctica 4 }
+
+
+\author{Elena María Gómez Ríos}
+
+
+\begin{document}
+\maketitle
+
+
+
+\section{Dados los alfabetos $A=\{0,1,2,3\}$ y $B=\{0,1\}$ y el homomorfismo $f$ de $A^*$ a $B^*$ dado
+por: $f(0)=00$, $f(1)=01$, $f(2)=10$, $f(3)=11$. Resolver las siguientes cuestiones:}
+
+\subsection*{a) Sea $L_1$ el conjunto de palabras de $B^*$ tales que acaban con la subcadena 11.
+Construir un autómata finito determinista que acepte $f^{-1}(L_1)$.}
+ 
+El autómata finito determinista de $L_1$ es:
+
+
+\begin{center}
+\begin{tikzpicture}[scale=0.2]
+\tikzstyle{every node}+=[inner sep=0pt]
+\draw [black] (14.1,-12.8) circle (3);
+\draw (14.1,-12.8) node {$q_0$};
+\draw [black] (27.5,-12.8) circle (3);
+\draw (27.5,-12.8) node {$q_1$};
+\draw [black] (41.3,-12.8) circle (3);
+\draw (41.3,-12.8) node {$q_2$};
+\draw [black] (41.3,-12.8) circle (2.4);
+\draw [black] (6.2,-12.8) -- (11.1,-12.8);
+\fill [black] (11.1,-12.8) -- (10.3,-12.3) -- (10.3,-13.3);
+\draw [black] (30.5,-12.8) -- (38.3,-12.8);
+\fill [black] (38.3,-12.8) -- (37.5,-12.3) -- (37.5,-13.3);
+\draw (34.4,-12.3) node [above] {$1$};
+\draw [black] (42.871,-10.258) arc (176.00538:-111.99462:2.25);
+\draw (47.65,-7.93) node [right] {$1$};
+\fill [black] (44.27,-12.5) -- (45.04,-13.06) -- (45.11,-12.06);
+\draw [black] (25.25,-14.762) arc (-58.88955:-121.11045:8.613);
+\fill [black] (16.35,-14.76) -- (16.78,-15.6) -- (17.29,-14.75);
+\draw (20.8,-16.5) node [below] {$0$};
+\draw [black] (17.1,-12.8) -- (24.5,-12.8);
+\fill [black] (24.5,-12.8) -- (23.7,-12.3) -- (23.7,-13.3);
+\draw (20.8,-12.3) node [above] {$1$};
+\draw [black] (39.581,-15.253) arc (-40.53024:-139.46976:15.631);
+\fill [black] (15.82,-15.25) -- (15.96,-16.19) -- (16.72,-15.54);
+\draw (27.7,-21.23) node [below] {$0$};
+\draw [black] (12.777,-10.12) arc (234:-54:2.25);
+\draw (14.1,-5.55) node [above] {$0$};
+\fill [black] (15.42,-10.12) -- (16.3,-9.77) -- (15.49,-9.18);
+\end{tikzpicture}
+\end{center}
+
+Por lo tanto el autómata finito determinista que acepte $f^{-1}(L_1)$ es:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.2]
+\tikzstyle{every node}+=[inner sep=0pt]
+\draw [black] (14.1,-12.8) circle (3);
+\draw (14.1,-12.8) node {$q_0$};
+\draw [black] (27.5,-12.8) circle (3);
+\draw (27.5,-12.8) node {$q_1$};
+\draw [black] (27.5,-12.8) circle (2.4);
+\draw [black] (6.2,-12.8) -- (11.1,-12.8);
+\fill [black] (11.1,-12.8) -- (10.3,-12.3) -- (10.3,-13.3);
+\draw [black] (29.412,-10.503) arc (167.96249:-120.03751:2.25);
+\draw (34.39,-9.07) node [right] {$3$};
+\fill [black] (30.49,-12.92) -- (31.16,-13.58) -- (31.37,-12.6);
+\draw [black] (17.1,-12.8) -- (24.5,-12.8);
+\fill [black] (24.5,-12.8) -- (23.7,-12.3) -- (23.7,-13.3);
+\draw (20.8,-13.3) node [below] {$3$};
+\draw [black] (12.777,-10.12) arc (234:-54:2.25);
+\draw (14.1,-5.55) node [above] {$0,1,2$};
+\fill [black] (15.42,-10.12) -- (16.3,-9.77) -- (15.49,-9.18);
+\draw [black] (25.51,-15.021) arc (-52.87201:-127.12799:7.804);
+\fill [black] (16.09,-15.02) -- (16.43,-15.9) -- (17.03,-15.1);
+\draw (20.8,-17.1) node [below] {$0,1,2$};
+\end{tikzpicture}
+\end{center}
+
+\subsection*{b) Sea $L_3$ el conjunto de palabras de $A^*$ definido como $L_3 = \{2^k3^k \mid 1\leq k \leq 100\}$.
+Construir una expresión regular que represente a $f(L_3)$}
+
+\begin{center}
+$f(L_3) = \{(10)^k (11)^k \mid 1 \leq k \leq 100 \}$
+\end{center}
+
+
+\section{Construir un autómata finito determinista que acepte el lenguaje\\ $L= \{0^i 1^j \mid i \geq j\}$.}
+
+Probamos que $L_2$ no es un lenguaje regular haciendo uso del lema de bombeo. \\
+$\forall n \in \mathbb{N} $, existe una palabra $z \in L_2 $, con $ |z| \geq n$, $z=0^i1^j$ con $j \leq i \leq n$ tal que para toda descomposición $z = uvw$. Si verifica
+\begin{itemize}
+\item $|uv| \leq n$
+\item $|v| \geq 1$
+\end{itemize}
+entonces $\exists i \in \mathbb{N}$, tal que $uv^iw \in L_2$.\\
+
+Entonces tenemos que $ u = 0^k, v= 0^i, w= 0^{n-k-i}1^n \mid i \leq 1$\\
+$\exists i \in \mathbb{N}$, tal que $uv^i w \not\in L_2  $\\
+Haciendo $i = 2, uv^2 w= 0^k 0^{2i}0^{n-k-i}1^n = 0^{n+i}1^n \not\in L_2$
+ 
+Por tanto al ser un lenguaje no regular no se puede construir un autómata finito determinista que lo acepte.
+
+
+
+\section{Minimizar si es posible el siguiente autómata usando el algoritmo visto en clase.}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.2]
+\tikzstyle{every node}+=[inner sep=0pt]
+\draw [black] (14.8,-18.5) circle (3);
+\draw (14.8,-18.5) node {$A$};
+\draw [black] (28.1,-10.1) circle (3);
+\draw (28.1,-10.1) node {$B$};
+\draw [black] (28.1,-27.6) circle (3);
+\draw (28.1,-27.6) node {$C$};
+\draw [black] (28.1,-27.6) circle (2.4);
+\draw [black] (39.4,-19.8) circle (3);
+\draw (39.4,-19.8) node {$D$};
+\draw [black] (44.8,-10.1) circle (3);
+\draw (44.8,-10.1) node {$E$};
+\draw [black] (44.8,-10.1) circle (2.4);
+\draw [black] (20.6,-27.6) -- (25.1,-27.6);
+\fill [black] (25.1,-27.6) -- (24.3,-27.1) -- (24.3,-28.1);
+\draw [black] (17.34,-16.9) -- (25.56,-11.7);
+\fill [black] (25.56,-11.7) -- (24.62,-11.71) -- (25.15,-12.55);
+\draw (23.2,-14.8) node [below] {$0,1$};
+\draw [black] (28.1,-13.1) -- (28.1,-24.6);
+\fill [black] (28.1,-24.6) -- (28.6,-23.8) -- (27.6,-23.8);
+\draw (27.6,-18.85) node [left] {$0$};
+\draw [black] (25.62,-25.91) -- (17.28,-20.19);
+\fill [black] (17.28,-20.19) -- (17.65,-21.06) -- (18.22,-20.23);
+\draw (22.45,-22.55) node [above] {$1$};
+\draw [black] (30.57,-25.9) -- (36.93,-21.5);
+\fill [black] (36.93,-21.5) -- (35.99,-21.55) -- (36.56,-22.37);
+\draw (34.75,-24.2) node [below] {$0$};
+\draw [black] (37.12,-17.85) -- (30.38,-12.05);
+\fill [black] (30.38,-12.05) -- (30.66,-12.95) -- (31.31,-12.2);
+\draw (35.51,-14.46) node [above] {$0,1$};
+\draw [black] (31.1,-10.1) -- (41.8,-10.1);
+\fill [black] (41.8,-10.1) -- (41,-9.6) -- (41,-10.6);
+\draw (36.45,-9.6) node [above] {$1$};
+\draw [black] (43.34,-12.72) -- (40.86,-17.18);
+\fill [black] (40.86,-17.18) -- (41.69,-16.72) -- (40.81,-16.24);
+\draw (42.77,-16.15) node [right] {$0,1$};
+\end{tikzpicture}
+\end{center}
+
+
+Comenzamos con el algoritmo, como en este caso no hay estados inaccesibles pasamos marcar los estados finales:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|lllll|}
+\hline
+B &\multicolumn{1}{|l|}{} &  &  &  \\
+ \hline
+C &\multicolumn{1}{|l|}{X} & \multicolumn{1}{l|}{X} &  &  \\
+ \hline
+D &\multicolumn{1}{|l|}{}& \multicolumn{1}{l|}{} & \multicolumn{1}{|l|}{X} &  \\
+ \hline
+E &\multicolumn{1}{|l|}{X} & \multicolumn{1}{l|}{X} &\multicolumn{1}{|l|}{}  & \multicolumn{1}{l|}{X}\\
+\hline
+ & \multicolumn{1}{|l|}{A} & \multicolumn{1}{|l|}{B} & \multicolumn{1}{|l|}{C} & \multicolumn{1}{|l|}{D} \\
+\hline
+\end{tabular}
+\end{table}
+
+Seguimos con el procedimiento y nos quedaría la siguiente tabla:
+
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|lllll|}
+\hline
+B &\multicolumn{1}{|l|}{X} &  &  &  \\
+ \hline
+C &\multicolumn{1}{|l|}{X} & \multicolumn{1}{l|}{X} &  &  \\
+ \hline
+D &\multicolumn{1}{|l|}{}& \multicolumn{1}{l|}{X} & \multicolumn{1}{|l|}{X} &  \\
+ \hline
+E &\multicolumn{1}{|l|}{X} & \multicolumn{1}{l|}{X} &\multicolumn{1}{|l|}{}  & \multicolumn{1}{l|}{X}\\
+\hline
+ & \multicolumn{1}{|l|}{A} & \multicolumn{1}{|l|}{B} & \multicolumn{1}{|l|}{C} & \multicolumn{1}{|l|}{D} \\
+\hline
+\end{tabular}
+\end{table}
+
+Y por tanto obtenemos que $A\equiv D$ y $C\equiv E$:\\
+
+\begin{center}
+\begin{tikzpicture}[scale=0.2]
+\tikzstyle{every node}+=[inner sep=0pt]
+\draw [black] (14.8,-18.5) circle (3);
+\draw (14.8,-18.5) node {$\{A,D\}$};
+\draw [black] (28.1,-10.1) circle (3);
+\draw (28.1,-10.1) node {$B$};
+\draw [black] (28.1,-27.6) circle (3);
+\draw (28.1,-27.6) node {$\{C,E\}$};
+\draw [black] (28.1,-27.6) circle (2.4);
+\draw [black] (20.6,-27.6) -- (25.1,-27.6);
+\fill [black] (25.1,-27.6) -- (24.3,-27.1) -- (24.3,-28.1);
+\draw [black] (17.34,-16.9) -- (25.56,-11.7);
+\fill [black] (25.56,-11.7) -- (24.62,-11.71) -- (25.15,-12.55);
+\draw (23.2,-14.8) node [below] {$0,1$};
+\draw [black] (28.1,-13.1) -- (28.1,-24.6);
+\fill [black] (28.1,-24.6) -- (28.6,-23.8) -- (27.6,-23.8);
+\draw (28.6,-18.85) node [right] {$0,1$};
+\draw [black] (25.62,-25.91) -- (17.28,-20.19);
+\fill [black] (17.28,-20.19) -- (17.65,-21.06) -- (18.22,-20.23);
+\draw (23.2,-22.55) node [above] {$0,1$};
+\end{tikzpicture}
+\end{center}
+
+
+
+\end{document}

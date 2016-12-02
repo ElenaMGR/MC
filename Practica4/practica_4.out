@@ -1,0 +1,3 @@
+\BOOKMARK [1][-]{section.1}{Dados los alfabetos A=\1730,1,2,3\175 y B=\1730,1\175 y el homomorfismo f de A* a B* dado por: f\(0\)=00, f\(1\)=01, f\(2\)=10, f\(3\)=11. Resolver las siguientes cuestiones:}{}% 1
+\BOOKMARK [1][-]{section.2}{Construir un aut\363mata finito determinista que acepte el lenguaje L= \1730i 1j i j\175.}{}% 2
+\BOOKMARK [1][-]{section.3}{Minimizar si es posible el siguiente aut\363mata usando el algoritmo visto en clase.}{}% 3
