@@ -1,0 +1,91 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{enumerate}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[hidelinks]{hyperref}
+\usepackage[vmargin=2.3cm,hmargin=2.3cm]{geometry}
+\usepackage{sectsty}
+\sectionfont{\fontsize{12}{15}\selectfont}
+\usepackage{tikz}
+\usepackage{qtree}
+
+
+\title{MODELOS DE COMPUTACIÓN \\ Práctica 6: Autómatas con pila. }
+
+
+\author{Elena María Gómez Ríos}
+
+
+\begin{document}
+\maketitle
+
+
+% ----------------------  Ejercicio 1  ------------------------------------- %
+\section{Dar un autómata con pila que acepte las cadenas del siguiente lenguaje por el criterio de pila vacía:}
+$$L = \lbrace a^ib^jc^kd^l \mid (i=l) v (j=k) \rbrace$$
+
+$M = (\{q_0,q_1,q_2,q_3,q_4,q_5\},\{a,b,c,d\},\{R,B,G\},\delta,q_0,R,\emptyset)$
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l|l|l}
+$\delta(q_0,a,R) = \{(q_1,BR)\}$ & $\delta(q_1,\varepsilon,B) = \{(q_1,\varepsilon)\}$ & $\delta(q_2,\varepsilon,R) = \{(q_2,\varepsilon)\}$ \\
+$\delta(q_0,b,R) = \{(q_1,GR)\}$ & $\delta(q_1,\varepsilon,R) = \{(q_1,\varepsilon)\}$ & $\delta(q_3,d,B) = \{(q_3,\varepsilon)\}$ \\
+$\delta(q_0,c,R) = \{(q_0,RR)\}$ & $\delta(q_1,b,G) = \{(q_1,GG)\}$ & $\delta(q_3,\varepsilon,R) = \{(q_3,\varepsilon)\}$ \\
+$\delta(q_0,d,R) = \{(q_0,RR)\}$ & $\delta(q_1,c,G) = \{(q_2,\varepsilon)\}$ & $\delta(q_4,\varepsilon,G) = \{(q_4,\varepsilon)\}$ \\
+$\delta(q_0,\varepsilon,B) = \{(q_0,\varepsilon)\}$ & $\delta(q_1,d,G) = \{(q_4,\varepsilon)\}$ & $\delta(q_4,d,B) = \{(q_4,\varepsilon)\}$ \\
+$\delta(q_0,\varepsilon,R) = \{(q_0,\varepsilon)\}$ & $\delta(q_2,c,G) = \{(q_2,\varepsilon)\}$ & $\delta(q_4,c,G) = \{(q_4,\varepsilon)\}$ \\
+$\delta(q_1,d,B) = \{(q_3,\varepsilon)\}$ & $\delta(q_2,d,B) = \{(q_2,\varepsilon)\}$ & $\delta(q_4,\varepsilon,B) = \{(q_5,\varepsilon)\}$ \\
+$\delta(q_1,a,B) = \{(q_1,BB)\}$ & $\delta(q_2,d,G) = \{(q_4,\varepsilon)\}$ & $\delta(q_5,\varepsilon,R) = \{(q_5,\varepsilon)\}$ \\
+$\delta(q_1,b,B) = \{(q_1,GB)\}$ & $\delta(q_2,c,B) = \{(q_4,B)\}$ & 
+\end{tabular}
+\end{table}
+
+
+% ----------------------  Ejercicio 2  ------------------------------------- %
+\section{Dar un autómata con pila determinista que acepte las cadenas definidas sobre el alfabeto A de los siguientes lenguajes por el criterio de pila vacía, si no es posible encontrarlo por ese criterio entonces usar el criterio de estados finales:}
+
+\subsection*{a) $L1 = \lbrace 0^i1^j2^k3^m \mid i,j,k\geq0, m = i+j+k \rbrace$ con $A = \lbrace0,1,2,3\rbrace$}
+$$M = (\lbrace q_1,q_2,q_3,q_4 \rbrace, \lbrace 0,1,2,3 \rbrace, \lbrace R \rbrace, \delta , q_1, R, \emptyset ) $$
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l|l|l}
+$\delta( q_1,2,R) = \lbrace(q_3,RR)\rbrace$ & $\delta(q_1,0,R)=\lbrace(q_1,RR)\rbrace$ & $\delta( q_3,3,R) = \lbrace(q_4,\varepsilon)\rbrace$ \\
+$\delta( q_1,1,R) = \lbrace(q_2,RR)\rbrace$ & $\delta(q_2,1,R)=\lbrace(q_2,RR)\rbrace$ & $\delta(q_4,3,R)=\lbrace(q_4,\varepsilon)\rbrace$ \\
+$\delta( q_2,2,R) = \lbrace(q_3,RR)\rbrace$ & $\delta(q_3,2,R)=\lbrace(q_3,RR)\rbrace$ & $\delta( q_4,3,R) = \lbrace(q_4,\varepsilon)\rbrace$ \\
+$\delta( q_1,\varepsilon,R) = \lbrace(q_4,\varepsilon)\rbrace$ & $\delta( q_2,\varepsilon,R) = \lbrace(q_4,\varepsilon)\rbrace$ & $\delta(q_3,\varepsilon,R)=\lbrace(q_4,\varepsilon)\rbrace$
+\end{tabular}
+\end{table}
+
+\subsection*{b) $L2 = \lbrace 0^i 1^j2^k3^m4 \mid i,j,k \geq 0, m = i+j+k \rbrace  $ con $A = \lbrace0,1,2,3,4\rbrace$}
+$$M = (\lbrace q_1,q_2,q_3,q_4,q_5 \rbrace, \lbrace 0,1,2,3,4 \rbrace, \lbrace R \rbrace, \delta , q_1, R, \emptyset ) $$
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l|l|l}
+$\delta( q_1,2,R) = \lbrace(q_3,RR)\rbrace$ & $\delta(q_1,0,R)=\lbrace(q_1,RR)\rbrace$ & $\delta( q_1,1,R) = \lbrace(q_2,RR)\rbrace$ \\
+$\delta(q_2,1,R)=\lbrace(q_2,RR)\rbrace$ & $\delta( q_2,2,R) = \lbrace(q_3,RR)\rbrace$ & $\delta(q_3,2,R)=\lbrace(q_3,RR)\rbrace$ \\
+$\delta( q_3,3,R) = \lbrace(q_4,\varepsilon)\rbrace$ & $\delta(q_4,3,R)=\lbrace(q_4,\varepsilon)\rbrace$ & $\delta( q_4,3,R) = \lbrace(q_4,\varepsilon)\rbrace$ \\
+$\delta( q_1,\varepsilon,R) = \lbrace(q_4,\varepsilon)\rbrace$ & $\delta( q_2,\varepsilon,R) = \lbrace(q_4,\varepsilon)\rbrace$ &  $\delta(q_3,\varepsilon,R)=\lbrace(q_4,\varepsilon)\rbrace$ \\
+$\delta( q_4,4,R) = \lbrace(q_5,\varepsilon)\rbrace$ &  &  
+\end{tabular}
+\end{table}
+
+
+% ----------------------  Ejercicio 3  ------------------------------------- %
+\section{Construir un autómata con pila que acepte el siguiente lenguaje:}
+$$L = \lbrace a^i b^j c^k d^l : i + l = j + k \rbrace$$
+
+\subsection*{a) Construir, a partir de dicho autómata, una gramática libre del contexto que acepte dicho lenguaje.}
+
+
+
+\subsection*{b) Eliminar símbolos y producciones inútiles de la gramática}
+
+\end{document}

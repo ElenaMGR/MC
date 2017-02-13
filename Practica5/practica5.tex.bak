@@ -357,7 +357,7 @@ $J=\{D\}, V_s=\{S,A,B,C,D\}, T_s=\{a,b,c,d,\varepsilon\}$\\
 $J=\{\emptyset\}, V_s=\{S,A,B,C,D\}, T_s=\{a,b,c,d,\varepsilon\}$\\
 
 Por lo que podemos eliminar la producción $F$:\\
-$S \rightarrow S_1 \mid S_2S_3a \mid aS_4cd$\\
+$S \rightarrow A \mid BCa \mid aDcd$\\
 $A \rightarrow aAb \mid c$\\
 $B \rightarrow CD \mid Ad | \varepsilon$\\
 $C \rightarrow Cc \mid Bb \mid c$\\
@@ -369,14 +369,14 @@ $H=\{\emptyset\}, H=\{BD\}, H=\{BD\}$\\
 Por lo que obtenemos:\\
 $S \rightarrow A \mid BCa \mid Ca \mid aDcd \mid acd$\\
 $A \rightarrow aAb \mid c$\\
-$B \rightarrow CS_4 \mid C \mid Ad$\\
+$B \rightarrow CD \mid C \mid Ad$\\
 $C \rightarrow Cc \mid Bb \mid b \mid c$\\
 $D \rightarrow aDd \mid ad \mid Dd \mid d$ \\
 
 Ahora eliminamos las producciones unitarias:\\
 $S \rightarrow aAb \mid c \mid BCa \mid Ca \mid aDcd \mid acd$\\
 $A \rightarrow aAb \mid c$\\
-$B \rightarrow CS_4 \mid Cc \mid S_2b \mid b \mid c \mid Ad$\\
+$B \rightarrow CD \mid Cc \mid S_2b \mid b \mid c \mid Ad$\\
 $C \rightarrow Cc \mid Bb \mid b \mid c$\\
 $D \rightarrow aDd \mid ad \mid Dd \mid d$\\
 
